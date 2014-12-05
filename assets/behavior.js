@@ -13,7 +13,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "commentsOnly": true,
           "name": "Markdown"
         },
-        "sourcePath": "/Users/kelsin/src/coretheloothound/README.md",
+        "sourcePath": "/Users/cgiroir/src/coretheloothound/README.md",
         "projectPath": "README.md",
         "targetPath": "index",
         "pageTitle": "index",
@@ -21,16 +21,185 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "type": "heading",
           "data": {
             "level": 1,
-            "title": "Core The Loot Hound",
-            "slug": "core-the-loot-hound",
+            "title": "Coretheloothound",
+            "slug": "coretheloothound",
             "isFileHeader": true
           },
-          "depth": 1
+          "depth": 1,
+          "children": [
+            {
+              "type": "heading",
+              "data": {
+                "level": 2,
+                "title": "Prerequisites",
+                "slug": "prerequisites"
+              },
+              "depth": 2
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 2,
+                "title": "Installation",
+                "slug": "installation"
+              },
+              "depth": 2
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 2,
+                "title": "Running / Development",
+                "slug": "running--development"
+              },
+              "depth": 2,
+              "children": [
+                {
+                  "type": "heading",
+                  "data": {
+                    "level": 3,
+                    "title": "Code Generators",
+                    "slug": "code-generators"
+                  },
+                  "depth": 3
+                }, {
+                  "type": "heading",
+                  "data": {
+                    "level": 3,
+                    "title": "Running Tests",
+                    "slug": "running-tests"
+                  },
+                  "depth": 3
+                }, {
+                  "type": "heading",
+                  "data": {
+                    "level": 3,
+                    "title": "Building",
+                    "slug": "building"
+                  },
+                  "depth": 3
+                }, {
+                  "type": "heading",
+                  "data": {
+                    "level": 3,
+                    "title": "Deploying",
+                    "slug": "deploying"
+                  },
+                  "depth": 3
+                }
+              ]
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 2,
+                "title": "Further Reading / Useful Links",
+                "slug": "further-reading--useful-links"
+              },
+              "depth": 2
+            }
+          ]
         },
-        "title": "Core The Loot Hound"
+        "title": "Coretheloothound"
       },
       "depth": 1,
-      "outline": []
+      "outline": [
+        {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "Prerequisites",
+            "slug": "prerequisites"
+          },
+          "depth": 2
+        }, {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "Installation",
+            "slug": "installation"
+          },
+          "depth": 2
+        }, {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "Running / Development",
+            "slug": "running--development"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "Code Generators",
+                "slug": "code-generators"
+              },
+              "depth": 3
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "Running Tests",
+                "slug": "running-tests"
+              },
+              "depth": 3
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "Building",
+                "slug": "building"
+              },
+              "depth": 3
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "Deploying",
+                "slug": "deploying"
+              },
+              "depth": 3
+            }
+          ]
+        }, {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "Further Reading / Useful Links",
+            "slug": "further-reading--useful-links"
+          },
+          "depth": 2
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
+        "path": "adapters",
+        "title": "adapters"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/adapters/application.js",
+            "projectPath": "app/adapters/application.js",
+            "targetPath": "adapters/application",
+            "pageTitle": "adapters/application",
+            "title": "application"
+          },
+          "depth": 2,
+          "outline": []
+        }
+      ]
     }, {
       "type": "file",
       "data": {
@@ -43,45 +212,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "foldPrefix": "^",
           "name": "JavaScript"
         },
-        "sourcePath": "/Users/kelsin/src/coretheloothound/app/app.js",
+        "sourcePath": "/Users/cgiroir/src/coretheloothound/app/app.js",
         "projectPath": "app/app.js",
         "targetPath": "app",
         "pageTitle": "app",
-        "firstHeader": {
-          "type": "heading",
-          "data": {
-            "level": 1,
-            "title": "app.js",
-            "slug": "appjs",
-            "isFileHeader": true
-          },
-          "depth": 1,
-          "children": [
-            {
-              "type": "heading",
-              "data": {
-                "level": 2,
-                "title": "Initializers",
-                "slug": "initializers"
-              },
-              "depth": 2
-            }
-          ]
-        },
-        "title": "app.js"
+        "title": "app"
       },
       "depth": 1,
-      "outline": [
-        {
-          "type": "heading",
-          "data": {
-            "level": 2,
-            "title": "Initializers",
-            "slug": "initializers"
-          },
-          "depth": 2
-        }
-      ]
+      "outline": []
     }, {
       "type": "folder",
       "data": {
@@ -102,11 +240,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/ApplicationController.js",
-            "projectPath": "app/controllers/ApplicationController.js",
-            "targetPath": "controllers/ApplicationController",
-            "pageTitle": "controllers/ApplicationController",
-            "title": "ApplicationController"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/account.js",
+            "projectPath": "app/controllers/account.js",
+            "targetPath": "controllers/account",
+            "pageTitle": "controllers/account",
+            "title": "account"
           },
           "depth": 2,
           "outline": []
@@ -122,11 +260,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/AuthController.js",
-            "projectPath": "app/controllers/AuthController.js",
-            "targetPath": "controllers/AuthController",
-            "pageTitle": "controllers/AuthController",
-            "title": "AuthController"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/application.js",
+            "projectPath": "app/controllers/application.js",
+            "targetPath": "controllers/application",
+            "pageTitle": "controllers/application",
+            "title": "application"
           },
           "depth": 2,
           "outline": []
@@ -142,11 +280,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/CharactersIndexController.js",
-            "projectPath": "app/controllers/CharactersIndexController.js",
-            "targetPath": "controllers/CharactersIndexController",
-            "pageTitle": "controllers/CharactersIndexController",
-            "title": "CharactersIndexController"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/auth.js",
+            "projectPath": "app/controllers/auth.js",
+            "targetPath": "controllers/auth",
+            "pageTitle": "controllers/auth",
+            "title": "auth"
           },
           "depth": 2,
           "outline": []
@@ -162,74 +300,104 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/RaidIndexController.js",
-            "projectPath": "app/controllers/RaidIndexController.js",
-            "targetPath": "controllers/RaidIndexController",
-            "pageTitle": "controllers/RaidIndexController",
-            "title": "RaidIndexController"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/character.js",
+            "projectPath": "app/controllers/character.js",
+            "targetPath": "controllers/character",
+            "pageTitle": "controllers/character",
+            "title": "character"
           },
           "depth": 2,
           "outline": []
         }, {
-          "type": "file",
+          "type": "folder",
           "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/RaidsIndexController.js",
-            "projectPath": "app/controllers/RaidsIndexController.js",
-            "targetPath": "controllers/RaidsIndexController",
-            "pageTitle": "controllers/RaidsIndexController",
-            "title": "RaidsIndexController"
+            "path": "controllers/characters",
+            "title": "characters"
           },
           "depth": 2,
-          "outline": []
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/characters/index.js",
+                "projectPath": "app/controllers/characters/index.js",
+                "targetPath": "controllers/characters/index",
+                "pageTitle": "controllers/characters/index",
+                "title": "index"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
         }, {
-          "type": "file",
+          "type": "folder",
           "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/RaidsNewController.js",
-            "projectPath": "app/controllers/RaidsNewController.js",
-            "targetPath": "controllers/RaidsNewController",
-            "pageTitle": "controllers/RaidsNewController",
-            "title": "RaidsNewController"
+            "path": "controllers/raid",
+            "title": "raid"
           },
           "depth": 2,
-          "outline": []
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/raid/index.js",
+                "projectPath": "app/controllers/raid/index.js",
+                "targetPath": "controllers/raid/index",
+                "pageTitle": "controllers/raid/index",
+                "title": "index"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
         }, {
-          "type": "file",
+          "type": "folder",
           "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/UserController.js",
-            "projectPath": "app/controllers/UserController.js",
-            "targetPath": "controllers/UserController",
-            "pageTitle": "controllers/UserController",
-            "title": "UserController"
+            "path": "controllers/raids",
+            "title": "raids"
           },
           "depth": 2,
-          "outline": []
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/raids/index.js",
+                "projectPath": "app/controllers/raids/index.js",
+                "targetPath": "controllers/raids/index",
+                "pageTitle": "controllers/raids/index",
+                "title": "index"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
         }
       ]
     }, {
@@ -252,11 +420,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/helpers/class.js",
-            "projectPath": "app/helpers/class.js",
-            "targetPath": "helpers/class",
-            "pageTitle": "helpers/class",
-            "title": "class"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/helpers/character-class.js",
+            "projectPath": "app/helpers/character-class.js",
+            "targetPath": "helpers/character-class",
+            "pageTitle": "helpers/character-class",
+            "title": "character-class"
           },
           "depth": 2,
           "outline": []
@@ -272,11 +440,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/helpers/faction.js",
-            "projectPath": "app/helpers/faction.js",
-            "targetPath": "helpers/faction",
-            "pageTitle": "helpers/faction",
-            "title": "faction"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/helpers/character-faction.js",
+            "projectPath": "app/helpers/character-faction.js",
+            "targetPath": "helpers/character-faction",
+            "pageTitle": "helpers/character-faction",
+            "title": "character-faction"
           },
           "depth": 2,
           "outline": []
@@ -292,11 +460,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/helpers/race.js",
-            "projectPath": "app/helpers/race.js",
-            "targetPath": "helpers/race",
-            "pageTitle": "helpers/race",
-            "title": "race"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/helpers/character-race.js",
+            "projectPath": "app/helpers/character-race.js",
+            "targetPath": "helpers/character-race",
+            "pageTitle": "helpers/character-race",
+            "title": "character-race"
           },
           "depth": 2,
           "outline": []
@@ -305,8 +473,8 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
     }, {
       "type": "folder",
       "data": {
-        "path": "less",
-        "title": "less"
+        "path": "initializers",
+        "title": "initializers"
       },
       "depth": 1,
       "children": [
@@ -314,19 +482,19 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "type": "file",
           "data": {
             "language": {
-              "nameMatchers": [".less"],
-              "pygmentsLexer": "sass",
-              "highlightJS": "scss",
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
               "singleLineComment": ["//"],
               "ignorePrefix": "}",
               "foldPrefix": "^",
-              "name": "LESS"
+              "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/less/main.less",
-            "projectPath": "app/less/main.less",
-            "targetPath": "less/main",
-            "pageTitle": "less/main",
-            "title": "main"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/initializers/storage.js",
+            "projectPath": "app/initializers/storage.js",
+            "targetPath": "initializers/storage",
+            "pageTitle": "initializers/storage",
+            "title": "storage"
           },
           "depth": 2,
           "outline": []
@@ -352,11 +520,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/Raid.js",
-            "projectPath": "app/models/Raid.js",
-            "targetPath": "models/Raid",
-            "pageTitle": "models/Raid",
-            "title": "Raid"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/account.js",
+            "projectPath": "app/models/account.js",
+            "targetPath": "models/account",
+            "pageTitle": "models/account",
+            "title": "account"
           },
           "depth": 2,
           "outline": []
@@ -372,11 +540,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/Session.js",
-            "projectPath": "app/models/Session.js",
-            "targetPath": "models/Session",
-            "pageTitle": "models/Session",
-            "title": "Session"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/character.js",
+            "projectPath": "app/models/character.js",
+            "targetPath": "models/character",
+            "pageTitle": "models/character",
+            "title": "character"
           },
           "depth": 2,
           "outline": []
@@ -392,11 +560,71 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/Storage.js",
-            "projectPath": "app/models/Storage.js",
-            "targetPath": "models/Storage",
-            "pageTitle": "models/Storage",
-            "title": "Storage"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/guild.js",
+            "projectPath": "app/models/guild.js",
+            "targetPath": "models/guild",
+            "pageTitle": "models/guild",
+            "title": "guild"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/raid.js",
+            "projectPath": "app/models/raid.js",
+            "targetPath": "models/raid",
+            "pageTitle": "models/raid",
+            "title": "raid"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/signup.js",
+            "projectPath": "app/models/signup.js",
+            "targetPath": "models/signup",
+            "pageTitle": "models/signup",
+            "title": "signup"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/storage.js",
+            "projectPath": "app/models/storage.js",
+            "targetPath": "models/storage",
+            "pageTitle": "models/storage",
+            "title": "storage"
           },
           "depth": 2,
           "outline": [
@@ -443,7 +671,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "foldPrefix": "^",
           "name": "JavaScript"
         },
-        "sourcePath": "/Users/kelsin/src/coretheloothound/app/router.js",
+        "sourcePath": "/Users/cgiroir/src/coretheloothound/app/router.js",
         "projectPath": "app/router.js",
         "targetPath": "router",
         "pageTitle": "router",
@@ -471,11 +699,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/routes/ApikeyRoute.js",
-            "projectPath": "app/routes/ApikeyRoute.js",
-            "targetPath": "routes/ApikeyRoute",
-            "pageTitle": "routes/ApikeyRoute",
-            "title": "ApikeyRoute"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/routes/apikey.js",
+            "projectPath": "app/routes/apikey.js",
+            "targetPath": "routes/apikey",
+            "pageTitle": "routes/apikey",
+            "title": "apikey"
           },
           "depth": 2,
           "outline": []
@@ -491,11 +719,131 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/routes/ApplicationRoute.js",
-            "projectPath": "app/routes/ApplicationRoute.js",
-            "targetPath": "routes/ApplicationRoute",
-            "pageTitle": "routes/ApplicationRoute",
-            "title": "ApplicationRoute"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/routes/application.js",
+            "projectPath": "app/routes/application.js",
+            "targetPath": "routes/application",
+            "pageTitle": "routes/application",
+            "title": "application"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "folder",
+          "data": {
+            "path": "routes/characters",
+            "title": "characters"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/routes/characters/index.js",
+                "projectPath": "app/routes/characters/index.js",
+                "targetPath": "routes/characters/index",
+                "pageTitle": "routes/characters/index",
+                "title": "index"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
+        }, {
+          "type": "folder",
+          "data": {
+            "path": "routes/raid",
+            "title": "raid"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/routes/raid/index.js",
+                "projectPath": "app/routes/raid/index.js",
+                "targetPath": "routes/raid/index",
+                "pageTitle": "routes/raid/index",
+                "title": "index"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
+        }, {
+          "type": "folder",
+          "data": {
+            "path": "routes/raids",
+            "title": "raids"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/routes/raids/index.js",
+                "projectPath": "app/routes/raids/index.js",
+                "targetPath": "routes/raids/index",
+                "pageTitle": "routes/raids/index",
+                "title": "index"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
+        "path": "styles",
+        "title": "styles"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".less"],
+              "pygmentsLexer": "sass",
+              "highlightJS": "scss",
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "LESS"
+            },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/styles/app.less",
+            "projectPath": "app/styles/app.less",
+            "targetPath": "styles/app",
+            "pageTitle": "styles/app",
+            "title": "app"
           },
           "depth": 2,
           "outline": []
@@ -503,19 +851,19 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "type": "file",
           "data": {
             "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
+              "nameMatchers": [".less"],
+              "pygmentsLexer": "sass",
+              "highlightJS": "scss",
               "singleLineComment": ["//"],
               "ignorePrefix": "}",
               "foldPrefix": "^",
-              "name": "JavaScript"
+              "name": "LESS"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/routes/CharactersIndexRoute.js",
-            "projectPath": "app/routes/CharactersIndexRoute.js",
-            "targetPath": "routes/CharactersIndexRoute",
-            "pageTitle": "routes/CharactersIndexRoute",
-            "title": "CharactersIndexRoute"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/styles/main.less",
+            "projectPath": "app/styles/main.less",
+            "targetPath": "styles/main",
+            "pageTitle": "styles/main",
+            "title": "main"
           },
           "depth": 2,
           "outline": []
@@ -523,59 +871,19 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "type": "file",
           "data": {
             "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
+              "nameMatchers": [".less"],
+              "pygmentsLexer": "sass",
+              "highlightJS": "scss",
               "singleLineComment": ["//"],
               "ignorePrefix": "}",
               "foldPrefix": "^",
-              "name": "JavaScript"
+              "name": "LESS"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/routes/RaidIndexRoute.js",
-            "projectPath": "app/routes/RaidIndexRoute.js",
-            "targetPath": "routes/RaidIndexRoute",
-            "pageTitle": "routes/RaidIndexRoute",
-            "title": "RaidIndexRoute"
-          },
-          "depth": 2,
-          "outline": []
-        }, {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/routes/RaidsIndexRoute.js",
-            "projectPath": "app/routes/RaidsIndexRoute.js",
-            "targetPath": "routes/RaidsIndexRoute",
-            "pageTitle": "routes/RaidsIndexRoute",
-            "title": "RaidsIndexRoute"
-          },
-          "depth": 2,
-          "outline": []
-        }, {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/routes/RaidsNewRoute.js",
-            "projectPath": "app/routes/RaidsNewRoute.js",
-            "targetPath": "routes/RaidsNewRoute",
-            "pageTitle": "routes/RaidsNewRoute",
-            "title": "RaidsNewRoute"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/styles/variables.less",
+            "projectPath": "app/styles/variables.less",
+            "targetPath": "styles/variables",
+            "pageTitle": "styles/variables",
+            "title": "variables"
           },
           "depth": 2,
           "outline": []
@@ -602,7 +910,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/account.hbs",
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/account.hbs",
             "projectPath": "app/templates/account.hbs",
             "targetPath": "templates/account",
             "pageTitle": "templates/account",
@@ -623,7 +931,28 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/application.hbs",
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/apikey.hbs",
+            "projectPath": "app/templates/apikey.hbs",
+            "targetPath": "templates/apikey",
+            "pageTitle": "templates/apikey",
+            "title": "apikey"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".handlebars", ".hbs"],
+              "pygmentsLexer": "html",
+              "highlightJS": "handlebars",
+              "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+              "strictMultiLineEnd": true,
+              "ignorePrefix": "#",
+              "foldPrefix": "^",
+              "name": "Handlebars"
+            },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/application.hbs",
             "projectPath": "app/templates/application.hbs",
             "targetPath": "templates/application",
             "pageTitle": "templates/application",
@@ -644,7 +973,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/auth.hbs",
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/auth.hbs",
             "projectPath": "app/templates/auth.hbs",
             "targetPath": "templates/auth",
             "pageTitle": "templates/auth",
@@ -665,14 +994,42 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/characters.hbs",
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/characters.hbs",
             "projectPath": "app/templates/characters.hbs",
             "targetPath": "templates/characters",
             "pageTitle": "templates/characters",
             "title": "characters"
           },
           "depth": 2,
-          "outline": [],
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".handlebars", ".hbs"],
+              "pygmentsLexer": "html",
+              "highlightJS": "handlebars",
+              "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+              "strictMultiLineEnd": true,
+              "ignorePrefix": "#",
+              "foldPrefix": "^",
+              "name": "Handlebars"
+            },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/characters-index.hbs",
+            "projectPath": "app/templates/characters-index.hbs",
+            "targetPath": "templates/characters-index",
+            "pageTitle": "templates/characters-index",
+            "title": "characters-index"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "folder",
+          "data": {
+            "path": "templates/characters",
+            "title": "characters"
+          },
+          "depth": 2,
           "children": [
             {
               "type": "file",
@@ -687,7 +1044,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/characters/index.hbs",
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/characters/index.hbs",
                 "projectPath": "app/templates/characters/index.hbs",
                 "targetPath": "templates/characters/index",
                 "pageTitle": "templates/characters/index",
@@ -697,6 +1054,27 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "outline": []
             }
           ]
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".handlebars", ".hbs"],
+              "pygmentsLexer": "html",
+              "highlightJS": "handlebars",
+              "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+              "strictMultiLineEnd": true,
+              "ignorePrefix": "#",
+              "foldPrefix": "^",
+              "name": "Handlebars"
+            },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/loading.hbs",
+            "projectPath": "app/templates/loading.hbs",
+            "targetPath": "templates/loading",
+            "pageTitle": "templates/loading",
+            "title": "loading"
+          },
+          "depth": 2,
+          "outline": []
         }, {
           "type": "folder",
           "data": {
@@ -718,7 +1096,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/raid/index.hbs",
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/raid/index.hbs",
                 "projectPath": "app/templates/raid/index.hbs",
                 "targetPath": "templates/raid/index",
                 "pageTitle": "templates/raid/index",
@@ -741,7 +1119,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/raids.hbs",
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/raids.hbs",
             "projectPath": "app/templates/raids.hbs",
             "targetPath": "templates/raids",
             "pageTitle": "templates/raids",
@@ -763,7 +1141,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/raids/index.hbs",
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/raids/index.hbs",
                 "projectPath": "app/templates/raids/index.hbs",
                 "targetPath": "templates/raids/index",
                 "pageTitle": "templates/raids/index",
@@ -784,7 +1162,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/raids/new.hbs",
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/raids/new.hbs",
                 "projectPath": "app/templates/raids/new.hbs",
                 "targetPath": "templates/raids/new",
                 "pageTitle": "templates/raids/new",
@@ -807,41 +1185,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/user.hbs",
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/user.hbs",
             "projectPath": "app/templates/user.hbs",
             "targetPath": "templates/user",
             "pageTitle": "templates/user",
             "title": "user"
-          },
-          "depth": 2,
-          "outline": []
-        }
-      ]
-    }, {
-      "type": "folder",
-      "data": {
-        "path": "views",
-        "title": "views"
-      },
-      "depth": 1,
-      "children": [
-        {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/views/RaidsNewView.js",
-            "projectPath": "app/views/RaidsNewView.js",
-            "targetPath": "views/RaidsNewView",
-            "pageTitle": "views/RaidsNewView",
-            "title": "RaidsNewView"
           },
           "depth": 2,
           "outline": []

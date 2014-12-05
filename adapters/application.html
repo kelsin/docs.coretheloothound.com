@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="en"><head><title>adapters/application</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="adapters/application"><meta name="groc-project-path" content="app/adapters/application.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/adapters/application.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import DS from <span class="hljs-string">'ember-data'</span>;
+
+export <span class="hljs-keyword">default</span> DS.ActiveModelAdapter.extend({
+  host: <span class="hljs-string">'https://api.byfirebepurged.com'</span>,
+
+  headers: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-string">'Authorization'</span>: <span class="hljs-string">'apikey '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).getValue(<span class="hljs-string">'apikey'</span>)
+    };
+  }.property().volatile()
+});</div></div></div></div></body></html>
