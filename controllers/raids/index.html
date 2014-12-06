@@ -1,36 +1,9 @@
 <!DOCTYPE html><html lang="en"><head><title>controllers/raids/index</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="controllers/raids/index"><meta name="groc-project-path" content="app/controllers/raids/index.js"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/controllers/raids/index.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;
 
-export <span class="hljs-keyword">default</span> Ember.Controller.extend({
+export <span class="hljs-keyword">default</span> Ember.ArrayController.extend({
   needs: [<span class="hljs-string">'application'</span>],
+  itemController: <span class="hljs-string">'raid'</span>,
 
   sortProperties: [<span class="hljs-string">'date:desc'</span>, <span class="hljs-string">'title'</span>, <span class="hljs-string">'created_at'</span>],
-
-  user: Ember.computed.alias(<span class="hljs-string">'controllers.application.user'</span>),
-  sorted: Ember.computed.sort(<span class="hljs-string">'model'</span>, <span class="hljs-string">'sortProperties'</span>),
-
-  created: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">var</span> user = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'user'</span>);
-    <span class="hljs-keyword">return</span> _.filter(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'sorted'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(raid)</span> {</span>
-      <span class="hljs-keyword">return</span> raid.get(<span class="hljs-string">'creator'</span>)._id === user._id;
-    });
-  }.property(<span class="hljs-string">'@each'</span>),
-
-  signed_up: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">var</span> user = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'user'</span>);
-    <span class="hljs-keyword">return</span> _.filter(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'sorted'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(raid)</span> {</span>
-      <span class="hljs-keyword">return</span> _.any(raid.get(<span class="hljs-string">'signups'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
-        <span class="hljs-keyword">return</span> signup.user._id === user._id;
-      });
-    });
-  }.property(<span class="hljs-string">'@each'</span>),
-
-  available: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">var</span> user = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'user'</span>);
-    <span class="hljs-keyword">return</span> _.filter(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'sorted'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(raid)</span> {</span>
-      <span class="hljs-keyword">return</span> raid.get(<span class="hljs-string">'creator'</span>)._id !== user._id &amp;&amp;
-        _.all(raid.get(<span class="hljs-string">'signups'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
-          <span class="hljs-keyword">return</span> signup.user._id !== user._id;
-        });
-    });
-  }.property(<span class="hljs-string">'@each'</span>)
+  arrangedContent: Ember.computed.sort(<span class="hljs-string">'model'</span>, <span class="hljs-string">'sortProperties'</span>)
 });</div></div></div></div></body></html>
