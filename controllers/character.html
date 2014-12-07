@@ -9,6 +9,18 @@ export <span class="hljs-keyword">default</span> Ember.ObjectController.extend({
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'realm'</span>).dasherize();
   }.property(<span class="hljs-string">'realm'</span>),
 
+  label: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'level'</span>) + <span class="hljs-string">': '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'name'</span>) + <span class="hljs-string">' - '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'realm'</span>);
+  }.property(<span class="hljs-string">'name'</span>, <span class="hljs-string">'realm'</span>),
+
+  canHeal: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> [<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>].contains(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'class_id'</span>));
+  }.property(<span class="hljs-string">'class_id'</span>),
+
+  canTank: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>].contains(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'class_id'</span>));
+  }.property(<span class="hljs-string">'class_id'</span>),
+
   armoryUrl: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-string">'http://us.battle.net/wow/character/'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'dashedRealm'</span>) + <span class="hljs-string">'/'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'dashedName'</span>) + <span class="hljs-string">'/simple'</span>;
   }.property(<span class="hljs-string">'dashedName'</span>, <span class="hljs-string">'dashedRealm'</span>),

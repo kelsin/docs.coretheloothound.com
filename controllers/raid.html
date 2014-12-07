@@ -1,4 +1,35 @@
-<!DOCTYPE html><html lang="en"><head><title>controllers/raid</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="controllers/raid"><meta name="groc-project-path" content="app/controllers/raid.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/controllers/raid.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>global moment </p></div></div><div class="code"><div class="wrapper">export <span class="hljs-keyword">default</span> Ember.ObjectController.extend({
+<!DOCTYPE html><html lang="en"><head><title>controllers/raid</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="controllers/raid"><meta name="groc-project-path" content="app/controllers/raid.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/controllers/raid.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;
+import CharacterController from <span class="hljs-string">'./character'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>global moment </p></div></div><div class="code"><div class="wrapper">export <span class="hljs-keyword">default</span> Ember.ObjectController.extend({
+  needs: [<span class="hljs-string">'application'</span>],
+  account: Ember.computed.alias(<span class="hljs-string">'controllers.application.account'</span>),
+
+  signedUpCharacterIds: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
+      <span class="hljs-keyword">return</span> signup.get(<span class="hljs-string">'character.id'</span>);
+    });
+  }.property(<span class="hljs-string">'signups.@each'</span>),
+
+  characters: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> ids = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signedUpCharacterIds'</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'account.characters'</span>)
+      .filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(character)</span> {</span>
+        <span class="hljs-keyword">return</span> !ids.contains(character.get(<span class="hljs-string">'id'</span>));
+      })
+      .map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(character)</span> {</span>
+        <span class="hljs-keyword">return</span> CharacterController.create({
+          model: character
+        });
+      })
+      .sort(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a,b)</span> {</span>
+        <span class="hljs-keyword">var</span> diff = b.get(<span class="hljs-string">'level'</span>) - a.get(<span class="hljs-string">'level'</span>);
+        <span class="hljs-keyword">if</span>(diff) {
+          <span class="hljs-keyword">return</span> diff;
+        } <span class="hljs-keyword">else</span> {
+          <span class="hljs-keyword">return</span> a.get(<span class="hljs-string">'name'</span>).localeCompare(b.get(<span class="hljs-string">'name'</span>));
+        }
+      });
+  }.property(<span class="hljs-string">'account.characters'</span>, <span class="hljs-string">'signedUpCharacterIds'</span>),
+
   dateAgo: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> moment(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'date'</span>)).fromNow();
   }.property(<span class="hljs-string">'date'</span>),
@@ -7,7 +38,38 @@
     <span class="hljs-keyword">return</span> moment(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'date'</span>)).calendar();
   }.property(<span class="hljs-string">'date'</span>),
 
-  totalSignups: <span class="hljs-number">0</span>,
+  totalSignups: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).get(<span class="hljs-string">'length'</span>);
+  }.property(<span class="hljs-string">'signups.@each'</span>),
 
-  totalSlots: <span class="hljs-number">0</span>
+  totalSlots: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> groups = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'groups'</span>);
+    <span class="hljs-keyword">return</span> groups.size * groups.number;
+  }.property(<span class="hljs-string">'groups'</span>),
+
+  totalTanks: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(total, signup)</span> {</span>
+      <span class="hljs-keyword">if</span>(signup.get(<span class="hljs-string">'role'</span>) === <span class="hljs-string">'tank'</span>) {
+        <span class="hljs-keyword">return</span> total + <span class="hljs-number">1</span>;
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> total;
+      }
+    }, <span class="hljs-number">0</span>);
+  }.property(<span class="hljs-string">'signups.@each'</span>),
+
+  totalHealers: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(total, signup)</span> {</span>
+      <span class="hljs-keyword">if</span>(signup.get(<span class="hljs-string">'role'</span>) === <span class="hljs-string">'healer'</span>) {
+        <span class="hljs-keyword">return</span> total + <span class="hljs-number">1</span>;
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> total;
+      }
+    }, <span class="hljs-number">0</span>);
+  }.property(<span class="hljs-string">'signups.@each'</span>),
+
+  waitingList: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
+      <span class="hljs-keyword">return</span> !signup.get(<span class="hljs-string">'seated'</span>);
+    });
+  }.property(<span class="hljs-string">'signups.@each'</span>)
 });</div></div></div></div></body></html>

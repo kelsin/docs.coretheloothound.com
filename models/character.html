@@ -13,5 +13,6 @@ export <span class="hljs-keyword">default</span> DS.Model.extend({
   image_url: DS.attr(<span class="hljs-string">'string'</span>),
 
   account: DS.belongsTo(<span class="hljs-string">'account'</span>),
-  guild: DS.belongsTo(<span class="hljs-string">'guild'</span>)
+  guild: DS.belongsTo(<span class="hljs-string">'guild'</span>),
+  signups: DS.hasMany(<span class="hljs-string">'signup'</span>)
 });</div></div></div></div></body></html>

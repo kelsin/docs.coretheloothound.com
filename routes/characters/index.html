@@ -2,8 +2,6 @@
 
 export <span class="hljs-keyword">default</span> Ember.Route.extend({
   model: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.store.find(<span class="hljs-string">'account'</span>, <span class="hljs-string">'1'</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(account)</span> {</span>
-      <span class="hljs-keyword">return</span> account.get(<span class="hljs-string">'characters'</span>);
-    });
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.store.all(<span class="hljs-string">'character'</span>);
   }
 });</div></div></div></div></body></html>
