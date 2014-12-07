@@ -6,17 +6,21 @@ export <span class="hljs-keyword">default</span> Ember.Route.extend({
   },
 
   actions: {
-    signup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(character, role)</span> {</span>
+    signup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(character, roles)</span> {</span>
       <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
       <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
 
       <span class="hljs-keyword">var</span> signup = <span class="hljs-keyword">this</span>.store.createRecord(<span class="hljs-string">'signup'</span>, {
         character: character.get(<span class="hljs-string">'model'</span>),
-        raid: raid,
-        role: role.toLowerCase()
+        raid: raid
       });
 
-      signup.save();
+      <span class="hljs-keyword">this</span>.store.find(<span class="hljs-string">'role'</span>, <span class="hljs-number">1</span>)
+        .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role)</span> {</span>
+          signup.get(<span class="hljs-string">'roles'</span>).addObject(role);
+          console.log(signup);
+          signup.save();
+        });
     },
     unsignup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
       signup.destroyRecord();

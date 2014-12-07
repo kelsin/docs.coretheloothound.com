@@ -3,6 +3,7 @@
 export <span class="hljs-keyword">default</span> DS.Model.extend({
   raid: DS.belongsTo(<span class="hljs-string">'raid'</span>),
   character: DS.belongsTo(<span class="hljs-string">'character'</span>),
+  roles: DS.hasMany(<span class="hljs-string">'role'</span>),
   seated: DS.attr(),
   preferred: DS.attr(),
   role: DS.attr()

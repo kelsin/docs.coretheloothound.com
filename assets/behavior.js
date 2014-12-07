@@ -770,6 +770,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/role.js",
+            "projectPath": "app/models/role.js",
+            "targetPath": "models/role",
+            "pageTitle": "models/role",
+            "title": "role"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/signup.js",
             "projectPath": "app/models/signup.js",
             "targetPath": "models/signup",

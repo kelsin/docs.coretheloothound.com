@@ -9,8 +9,27 @@ export <span class="hljs-keyword">default</span> Ember.ObjectController.extend({
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'realm'</span>).dasherize();
   }.property(<span class="hljs-string">'realm'</span>),
 
+  className: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">switch</span>(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'class_id'</span>)) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Warrior'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Paladin'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Hunter'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Rogue'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Priest'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Death Knight'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">7</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Shaman'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">8</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Mage'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">9</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Warlock'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">10</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Monk'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">11</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Druid'</span>;
+    }
+  }.property(<span class="hljs-string">'class_id'</span>),
+
   label: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'level'</span>) + <span class="hljs-string">': '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'name'</span>) + <span class="hljs-string">' - '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'realm'</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'level'</span>) +
+      <span class="hljs-string">': '</span>  + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'name'</span>) +
+      <span class="hljs-string">' - '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'className'</span>) +
+      <span class="hljs-string">' - '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'realm'</span>);
   }.property(<span class="hljs-string">'name'</span>, <span class="hljs-string">'realm'</span>),
 
   canHeal: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
