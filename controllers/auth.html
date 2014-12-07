@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><title>controllers/auth</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="controllers/auth"><meta name="groc-project-path" content="app/controllers/auth.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/controllers/auth.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>global $ </p></div></div><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Controller for the login/logout view</p></div></div><div class="code"><div class="wrapper">export <span class="hljs-keyword">default</span> Ember.Controller.extend({
+<!DOCTYPE html><html lang="en"><head><title>controllers/auth</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="controllers/auth"><meta name="groc-project-path" content="app/controllers/auth.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/controllers/auth.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>global $ </p></div></div><div class="code"><div class="wrapper">import ENV from <span class="hljs-string">'coretheloothound/config/environment'</span>;
+import Ember from <span class="hljs-string">'ember'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Controller for the login/logout view</p></div></div><div class="code"><div class="wrapper">export <span class="hljs-keyword">default</span> Ember.Controller.extend({
   needs: [<span class="hljs-string">'application'</span>],
 
   apikey: Ember.computed.alias(<span class="hljs-string">'controllers.application.apikey'</span>),
@@ -9,7 +10,7 @@
     login: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
       Ember.$.ajax({
         type: <span class="hljs-string">'GET'</span>,
-        url: <span class="hljs-string">'https://api.byfirebepurged.com/login'</span>,
+        url: ENV.api + <span class="hljs-string">'/login'</span>,
         data: {
           redirect: window.location.protocol +
             <span class="hljs-string">'//'</span> + window.location.host +
