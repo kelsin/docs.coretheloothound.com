@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head><title>components/donut-graph</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="components/donut-graph"><meta name="groc-project-path" content="app/components/donut-graph.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/components/donut-graph.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>global d3 
+global _ 
+global Math </p></div></div><div class="code"><div class="wrapper">export <span class="hljs-keyword">default</span> Ember.Component.extend({
+  classNames: [<span class="hljs-string">'graph-container'</span>],
+
+  angle: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> d3.scale.linear()
+      .domain([<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>])
+      .range([<span class="hljs-number">0.0</span>, <span class="hljs-number">2.0</span> * <span class="hljs-built_in">Math</span>.PI]);
+  }.property(),
+
+  arc: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(inner, outer)</span> {</span>
+    <span class="hljs-keyword">var</span> angle = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'angle'</span>);
+    <span class="hljs-keyword">return</span> d3.svg.arc()
+      .innerRadius(inner)
+      .outerRadius(outer)
+      .startAngle(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(d)</span> {</span>
+        <span class="hljs-keyword">return</span> angle(d.from);
+      })
+      .endAngle(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(d)</span> {</span>
+        <span class="hljs-keyword">return</span> angle(d.to);
+      });
+  },
+
+  arcInner: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.arc(<span class="hljs-number">34</span>, <span class="hljs-number">56</span>);
+  }.property(<span class="hljs-string">'angle'</span>),
+
+  arcOuter: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.arc(<span class="hljs-number">30</span>, <span class="hljs-number">60</span>);
+  }.property(<span class="hljs-string">'angle'</span>),
+
+  update: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> svg = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'svg'</span>);
+    <span class="hljs-keyword">var</span> data = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'data'</span>);
+    <span class="hljs-keyword">var</span> arcOuter = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'arcOuter'</span>);
+    <span class="hljs-keyword">var</span> arcInner = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'arcInner'</span>);
+
+    <span class="hljs-keyword">var</span> dataOuter = svg.selectAll(<span class="hljs-string">'path.outer'</span>).data(data, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(d)</span> {</span>
+      <span class="hljs-keyword">return</span> d.name;
+    });
+    dataOuter.enter()
+      .append(<span class="hljs-string">'path'</span>)
+      .attr(<span class="hljs-string">'class'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(d)</span> {</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'outer border-'</span> + d.className;
+      })
+      .attr(<span class="hljs-string">'transform'</span>, <span class="hljs-string">'translate(60,60)'</span>)
+      .append(<span class="hljs-string">"title"</span>)
+      .text(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(d)</span> {</span>
+        <span class="hljs-keyword">return</span> d.name + <span class="hljs-string">': '</span> + d.number;
+      });
+    dataOuter.exit().remove();
+    dataOuter.attr(<span class="hljs-string">'d'</span>, arcOuter);
+
+    <span class="hljs-keyword">var</span> dataInner = svg.selectAll(<span class="hljs-string">'path.inner'</span>).data(data, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(d)</span> {</span>
+      <span class="hljs-keyword">return</span> d.name;
+    });
+    dataInner.enter()
+      .append(<span class="hljs-string">'path'</span>)
+      .attr(<span class="hljs-string">'class'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(d)</span> {</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'inner '</span> + d.className;
+      })
+      .attr(<span class="hljs-string">'transform'</span>, <span class="hljs-string">'translate(60,60)'</span>)
+      .append(<span class="hljs-string">"title"</span>)
+      .text(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(d)</span> {</span>
+        <span class="hljs-keyword">return</span> d.name + <span class="hljs-string">': '</span> + d.number;
+      });
+    dataInner.exit().remove();
+    dataInner.attr(<span class="hljs-string">'d'</span>, arcInner);
+
+  }.observes(<span class="hljs-string">'data.@each'</span>),
+
+  didInsertElement: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
+    <span class="hljs-keyword">var</span> data = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'data'</span>);
+
+    <span class="hljs-keyword">var</span> arcOuter = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'arcOuter'</span>);
+    <span class="hljs-keyword">var</span> arcInner = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'arcInner'</span>);
+
+    <span class="hljs-keyword">var</span> element = d3.select(<span class="hljs-string">'#'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'elementId'</span>) + <span class="hljs-string">' .graph'</span>);
+
+    <span class="hljs-keyword">var</span> svg = element.append(<span class="hljs-string">'svg'</span>)
+          .attr(<span class="hljs-string">'height'</span>, <span class="hljs-string">'120'</span>)
+          .attr(<span class="hljs-string">'width'</span>, <span class="hljs-string">'120'</span>);
+    <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'svg'</span>, svg);
+
+    <span class="hljs-keyword">this</span>.update();
+  }
+});</div></div></div></div></body></html>

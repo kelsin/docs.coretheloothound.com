@@ -3,6 +3,12 @@ import CharacterController from <span class="hljs-string">'./character'</span>;<
   needs: [<span class="hljs-string">'application'</span>],
   account: Ember.computed.alias(<span class="hljs-string">'controllers.application.account'</span>),
 
+  roles: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'seated'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
+      <span class="hljs-keyword">return</span> signup.get(<span class="hljs-string">'role'</span>);
+    }).uniq().sortBy(<span class="hljs-string">'id'</span>);
+  }.property(<span class="hljs-string">'seated.@each.role'</span>),
+
   signedUpCharacterIds: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
       <span class="hljs-keyword">return</span> signup.get(<span class="hljs-string">'character.id'</span>);
@@ -38,38 +44,172 @@ import CharacterController from <span class="hljs-string">'./character'</span>;<
     <span class="hljs-keyword">return</span> moment(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'date'</span>)).calendar();
   }.property(<span class="hljs-string">'date'</span>),
 
-  totalSignups: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).get(<span class="hljs-string">'length'</span>);
+  accountSignups: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
+      <span class="hljs-keyword">return</span> signup.get(<span class="hljs-string">'character.account.id'</span>);
+    }).uniq().get(<span class="hljs-string">'length'</span>);
   }.property(<span class="hljs-string">'signups.@each'</span>),
+
+  accountWaitingList: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'waitingList'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
+      <span class="hljs-keyword">return</span> signup.get(<span class="hljs-string">'character.account.id'</span>);
+    }).uniq().get(<span class="hljs-string">'length'</span>);
+  }.property(<span class="hljs-string">'waitingList.@each'</span>),
+
+  accountSeated: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'seated'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
+      <span class="hljs-keyword">return</span> signup.get(<span class="hljs-string">'character.account.id'</span>);
+    }).uniq().get(<span class="hljs-string">'length'</span>);
+  }.property(<span class="hljs-string">'seated.@each'</span>),
 
   totalSlots: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> groups = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'groups'</span>);
     <span class="hljs-keyword">return</span> groups.size * groups.number;
   }.property(<span class="hljs-string">'groups'</span>),
 
-  totalTanks: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(total, signup)</span> {</span>
-      <span class="hljs-keyword">if</span>(signup.get(<span class="hljs-string">'role'</span>) === <span class="hljs-string">'tank'</span>) {
-        <span class="hljs-keyword">return</span> total + <span class="hljs-number">1</span>;
-      } <span class="hljs-keyword">else</span> {
-        <span class="hljs-keyword">return</span> total;
-      }
-    }, <span class="hljs-number">0</span>);
-  }.property(<span class="hljs-string">'signups.@each'</span>),
+  className: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(class_id)</span> {</span>
+    <span class="hljs-keyword">switch</span>(class_id) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Warrior'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Paladin'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Hunter'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Rogue'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Priest'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Death Knight'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">7</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Shaman'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">8</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Mage'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">9</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Warlock'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">10</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Monk'</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">11</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Druid'</span>;
+    <span class="hljs-keyword">default</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">''</span>;
+    }
+  },
 
-  totalHealers: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(total, signup)</span> {</span>
-      <span class="hljs-keyword">if</span>(signup.get(<span class="hljs-string">'role'</span>) === <span class="hljs-string">'healer'</span>) {
-        <span class="hljs-keyword">return</span> total + <span class="hljs-number">1</span>;
-      } <span class="hljs-keyword">else</span> {
-        <span class="hljs-keyword">return</span> total;
-      }
-    }, <span class="hljs-number">0</span>);
-  }.property(<span class="hljs-string">'signups.@each'</span>),
-
-  waitingList: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
-      <span class="hljs-keyword">return</span> !signup.get(<span class="hljs-string">'seated'</span>);
+  seated: Ember.computed.filterBy(<span class="hljs-string">'signups'</span>, <span class="hljs-string">'seated'</span>, <span class="hljs-literal">true</span>),
+  unseated: Ember.computed.filterBy(<span class="hljs-string">'signups'</span>, <span class="hljs-string">'seated'</span>, <span class="hljs-literal">false</span>),</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Waiting list doesn&#39;t include anyone from an account that has been seated</p></div></div><div class="code"><div class="wrapper">  waitingList: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> seated = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'seated'</span>);
+    <span class="hljs-keyword">var</span> unseated = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'unseated'</span>);
+    <span class="hljs-keyword">var</span> account_ids = seated.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
+      <span class="hljs-keyword">return</span> signup.get(<span class="hljs-string">'character.account.id'</span>);
+    }).uniq();
+    <span class="hljs-keyword">return</span> unseated.filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
+      <span class="hljs-keyword">return</span> !account_ids.contains(signup.get(<span class="hljs-string">'character.account.id'</span>));
     });
-  }.property(<span class="hljs-string">'signups.@each'</span>)
+  }.property(<span class="hljs-string">'seated.@each'</span>, <span class="hljs-string">'unseated.@each'</span>),
+
+  seatedClassData: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> className = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'className'</span>);
+    <span class="hljs-keyword">var</span> signups = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'seated'</span>);
+    <span class="hljs-keyword">var</span> total = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">var</span> totals = signups.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(totals, signup)</span> {</span>
+      <span class="hljs-keyword">var</span> id = <span class="hljs-built_in">parseInt</span>(signup.get(<span class="hljs-string">'character.class_id'</span>));
+      <span class="hljs-keyword">var</span> num = totals[id] || <span class="hljs-number">0</span>;
+      totals[id] = num + <span class="hljs-number">1</span>;
+      total++;
+      <span class="hljs-keyword">return</span> totals;
+    }, {});
+
+    <span class="hljs-keyword">var</span> cur = <span class="hljs-number">0.0</span>;
+    <span class="hljs-keyword">return</span> _.map([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(class_id)</span> {</span>
+      <span class="hljs-keyword">var</span> value = totals[class_id] || <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">var</span> from = cur;
+      <span class="hljs-keyword">var</span> to = cur + ((value / total) || <span class="hljs-number">0</span>);
+      cur = to;
+      <span class="hljs-keyword">return</span> {
+        number: value,
+        id: class_id,
+        name: className(class_id),
+        className: <span class="hljs-string">'class-'</span> + class_id,
+        from: from,
+        to: to
+      };
+    });
+  }.property(<span class="hljs-string">'seated.@each'</span>),
+
+  classData: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> className = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'className'</span>);
+    <span class="hljs-keyword">var</span> signups = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>);
+    <span class="hljs-keyword">var</span> total = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">var</span> totals = signups.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(totals, signup)</span> {</span>
+      <span class="hljs-keyword">var</span> id = <span class="hljs-built_in">parseInt</span>(signup.get(<span class="hljs-string">'character.class_id'</span>));
+      <span class="hljs-keyword">var</span> num = totals[id] || <span class="hljs-number">0</span>;
+      totals[id] = num + <span class="hljs-number">1</span>;
+      total++;
+      <span class="hljs-keyword">return</span> totals;
+    }, {});
+
+    <span class="hljs-keyword">var</span> cur = <span class="hljs-number">0.0</span>;
+    <span class="hljs-keyword">return</span> _.map([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(class_id)</span> {</span>
+      <span class="hljs-keyword">var</span> value = totals[class_id] || <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">var</span> from = cur;
+      <span class="hljs-keyword">var</span> to = cur + ((value / total) || <span class="hljs-number">0</span>);
+      cur = to;
+      <span class="hljs-keyword">return</span> {
+        number: value,
+        id: class_id,
+        name: className(class_id),
+        className: <span class="hljs-string">'class-'</span> + class_id,
+        from: from,
+        to: to
+      };
+    });
+  }.property(<span class="hljs-string">'signups.@each'</span>),
+
+  seatedRoleData: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> signups = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'seated'</span>);
+    <span class="hljs-keyword">var</span> total = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">var</span> totals = signups.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(totals, signup)</span> {</span>
+      <span class="hljs-keyword">var</span> role = signup.get(<span class="hljs-string">'role'</span>);
+      <span class="hljs-keyword">if</span> (role) {
+        <span class="hljs-keyword">var</span> name = role.get(<span class="hljs-string">'name'</span>);
+        <span class="hljs-keyword">var</span> num = totals[name] || <span class="hljs-number">0</span>;
+        totals[name] = num + <span class="hljs-number">1</span>;
+        total++;
+      }
+      <span class="hljs-keyword">return</span> totals;
+    }, {});
+
+    <span class="hljs-keyword">var</span> cur = <span class="hljs-number">0.0</span>;
+    <span class="hljs-keyword">return</span> _.map([<span class="hljs-string">'Tank'</span>, <span class="hljs-string">'Healing'</span>, <span class="hljs-string">'DPS'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(name)</span> {</span>
+      <span class="hljs-keyword">var</span> value = totals[name] || <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">var</span> from = cur;
+      <span class="hljs-keyword">var</span> to = cur + ((value / total) || <span class="hljs-number">0</span>);
+      cur = to;
+      <span class="hljs-keyword">return</span> {
+        number: value,
+        name: name,
+        className: name.toLowerCase(),
+        from: from,
+        to: to
+      };
+    });
+  }.property(<span class="hljs-string">'seated.@each.role'</span>),
+
+  roleData: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> signups = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>);
+    <span class="hljs-keyword">var</span> total = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">var</span> totals = signups.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(totals, signup)</span> {</span>
+      signup.get(<span class="hljs-string">'roles'</span>).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role)</span> {</span>
+        <span class="hljs-keyword">var</span> name = role.get(<span class="hljs-string">'name'</span>);
+        <span class="hljs-keyword">var</span> num = totals[name] || <span class="hljs-number">0</span>;
+        totals[name] = num + <span class="hljs-number">1</span>;
+        total++;
+      });
+      <span class="hljs-keyword">return</span> totals;
+    }, {});
+
+    <span class="hljs-keyword">var</span> cur = <span class="hljs-number">0.0</span>;
+    <span class="hljs-keyword">return</span> _.map([<span class="hljs-string">'Tank'</span>, <span class="hljs-string">'Healing'</span>, <span class="hljs-string">'DPS'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(name)</span> {</span>
+      <span class="hljs-keyword">var</span> value = totals[name] || <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">var</span> from = cur;
+      <span class="hljs-keyword">var</span> to = cur + ((value / total) || <span class="hljs-number">0</span>);
+      cur = to;
+      <span class="hljs-keyword">return</span> {
+        number: value,
+        name: name,
+        className: name.toLowerCase(),
+        from: from,
+        to: to
+      };
+    });
+  }.property(<span class="hljs-string">'signups.@each.roles'</span>)
 });</div></div></div></div></body></html>

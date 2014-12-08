@@ -268,6 +268,46 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           },
           "depth": 2,
           "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/donut-graph.js",
+            "projectPath": "app/components/donut-graph.js",
+            "targetPath": "components/donut-graph",
+            "pageTitle": "components/donut-graph",
+            "title": "donut-graph"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/raid-signup.js",
+            "projectPath": "app/components/raid-signup.js",
+            "targetPath": "components/raid-signup",
+            "pageTitle": "components/raid-signup",
+            "title": "raid-signup"
+          },
+          "depth": 2,
+          "outline": []
         }
       ]
     }, {
@@ -458,6 +498,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "outline": []
             }
           ]
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/role.js",
+            "projectPath": "app/controllers/role.js",
+            "targetPath": "controllers/role",
+            "pageTitle": "controllers/role",
+            "title": "role"
+          },
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1002,6 +1062,36 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
     }, {
       "type": "folder",
       "data": {
+        "path": "serializers",
+        "title": "serializers"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/serializers/signup.js",
+            "projectPath": "app/serializers/signup.js",
+            "targetPath": "serializers/signup",
+            "pageTitle": "serializers/signup",
+            "title": "signup"
+          },
+          "depth": 2,
+          "outline": []
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
         "path": "styles",
         "title": "styles"
       },
@@ -1253,6 +1343,48 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                 "targetPath": "templates/components/date-time",
                 "pageTitle": "templates/components/date-time",
                 "title": "date-time"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/components/donut-graph.hbs",
+                "projectPath": "app/templates/components/donut-graph.hbs",
+                "targetPath": "templates/components/donut-graph",
+                "pageTitle": "templates/components/donut-graph",
+                "title": "donut-graph"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/components/raid-signup.hbs",
+                "projectPath": "app/templates/components/raid-signup.hbs",
+                "targetPath": "templates/components/raid-signup",
+                "pageTitle": "templates/components/raid-signup",
+                "title": "raid-signup"
               },
               "depth": 3,
               "outline": []

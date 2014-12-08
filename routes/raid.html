@@ -6,7 +6,18 @@ export <span class="hljs-keyword">default</span> Ember.Route.extend({
   },
 
   actions: {
-    signup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(character, roles)</span> {</span>
+    seat: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup, role)</span> {</span>
+      signup.set(<span class="hljs-string">'seated'</span>, <span class="hljs-literal">true</span>);
+      signup.set(<span class="hljs-string">'role'</span>, role);
+      signup.save();
+    },
+
+    unseat: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
+      signup.set(<span class="hljs-string">'seated'</span>, <span class="hljs-literal">false</span>);
+      signup.save();
+    },
+
+    signup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(character, role_ids)</span> {</span>
       <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
       <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
 
@@ -15,12 +26,15 @@ export <span class="hljs-keyword">default</span> Ember.Route.extend({
         raid: raid
       });
 
-      <span class="hljs-keyword">this</span>.store.find(<span class="hljs-string">'role'</span>, <span class="hljs-number">1</span>)
-        .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role)</span> {</span>
+      Ember.RSVP.all(_.map(role_ids, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role_id)</span> {</span>
+        <span class="hljs-keyword">return</span> _this.store.find(<span class="hljs-string">'role'</span>, role_id);
+      })).then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(roles)</span> {</span>
+        <span class="hljs-keyword">return</span> _.each(roles, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role)</span> {</span>
           signup.get(<span class="hljs-string">'roles'</span>).addObject(role);
-          console.log(signup);
-          signup.save();
         });
+      }).then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        signup.save();
+      });
     },
     unsignup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
       signup.destroyRecord();
