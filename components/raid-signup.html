@@ -9,6 +9,10 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
     <span class="hljs-keyword">return</span> classes;
   }.property(<span class="hljs-string">'signup.character.class_id'</span>),
 
+  iconClasses: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'fa fa-'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.role.icon'</span>) + <span class="hljs-string">' fa-fw'</span>;
+  }.property(<span class="hljs-string">'signup.role.icon'</span>),
+
   actions: {
     unsignup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">"unsignup"</span>,
