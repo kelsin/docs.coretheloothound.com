@@ -11,6 +11,9 @@ import Ember from <span class="hljs-string">'ember'</span>;</div></div></div><di
       Ember.$.ajax({
         type: <span class="hljs-string">'GET'</span>,
         url: ENV.api + <span class="hljs-string">'/login'</span>,
+        headers: {
+          Accept: <span class="hljs-string">'application/json+ember'</span>
+        },
         data: {
           redirect: window.location.protocol +
             <span class="hljs-string">'//'</span> + window.location.host +
