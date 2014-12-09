@@ -2,7 +2,15 @@
 
 export <span class="hljs-keyword">default</span> Ember.Route.extend({
   model: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(params)</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.store.find(<span class="hljs-string">'raid'</span>, params.raid_id);
+    <span class="hljs-keyword">return</span> Ember.RSVP.hash({
+      raid: <span class="hljs-keyword">this</span>.store.find(<span class="hljs-string">'raid'</span>, params.raid_id),
+      roles: <span class="hljs-keyword">this</span>.store.all(<span class="hljs-string">'role'</span>)
+    });
+  },
+
+  setupController: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(controller, model)</span> {</span>
+    controller.set(<span class="hljs-string">'model'</span>, model.raid);
+    controller.set(<span class="hljs-string">'roles'</span>, model.roles);
   },
 
   actions: {
@@ -19,7 +27,7 @@ export <span class="hljs-keyword">default</span> Ember.Route.extend({
 
     signup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(character, role_ids)</span> {</span>
       <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
-      <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
+      <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel.raid;
 
       <span class="hljs-keyword">var</span> signup = <span class="hljs-keyword">this</span>.store.createRecord(<span class="hljs-string">'signup'</span>, {
         character: character.get(<span class="hljs-string">'model'</span>),

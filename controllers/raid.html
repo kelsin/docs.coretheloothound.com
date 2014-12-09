@@ -3,17 +3,18 @@ import CharacterController from <span class="hljs-string">'./character'</span>;<
   needs: [<span class="hljs-string">'application'</span>],
   account: Ember.computed.alias(<span class="hljs-string">'controllers.application.account'</span>),
 
-  roles: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'seated'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
-      <span class="hljs-keyword">return</span> signup.get(<span class="hljs-string">'role'</span>);
-    }).uniq().sortBy(<span class="hljs-string">'id'</span>);
-  }.property(<span class="hljs-string">'seated.@each.role'</span>),
+  moreThanOneGroup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'groups.number'</span>) &gt; <span class="hljs-number">1</span>;
+  }.property(<span class="hljs-string">'groups.number'</span>),
 
   signedUpCharacterIds: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
       <span class="hljs-keyword">return</span> signup.get(<span class="hljs-string">'character.id'</span>);
     });
   }.property(<span class="hljs-string">'signups.@each'</span>),
+
+  rolesSorting: [<span class="hljs-string">'slug:desc'</span>],
+  sortedRoles: Ember.computed.sort(<span class="hljs-string">'roles'</span>, <span class="hljs-string">'rolesSorting'</span>),
 
   characters: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> ids = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signedUpCharacterIds'</span>);

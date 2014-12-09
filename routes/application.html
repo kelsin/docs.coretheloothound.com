@@ -26,6 +26,10 @@ export <span class="hljs-keyword">default</span> Ember.Route.extend({
               _this.store.push(<span class="hljs-string">'guild'</span>, guild);
             });
 
+            Ember.$.each(data.roles, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(index, role)</span> {</span>
+              _this.store.push(<span class="hljs-string">'role'</span>, role);
+            });
+
             resolve({
               apikey: apikey,
               account: data.account

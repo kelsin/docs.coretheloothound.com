@@ -11,14 +11,21 @@
                         <span class="hljs-variable">optionValuePath</span>=<span class="hljs-string">"content.id"</span>
                         <span class="hljs-variable">optionLabelPath</span>=<span class="hljs-string">"content.label"</span>}}</span><span class="xml">
 
-        </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">each</span> roleCheckboxes</span>}}</span><span class="xml">
-          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
-              </span><span class="hljs-expression">{{<span class="hljs-variable">input</span> <span class="hljs-variable">id</span>=<span class="hljs-variable">slug</span> <span class="hljs-variable">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-variable">checked</span>=<span class="hljs-variable">checked</span> <span class="hljs-variable">name</span>=<span class="hljs-variable">name</span>}}</span><span class="xml">
-              </span><span class="hljs-expression">{{<span class="hljs-variable">name</span>}}</span><span class="xml">
-            <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-md-6"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"new-signup-image"</span> </span></span><span class="hljs-expression">{{<span class="hljs-variable">bind-attr</span> <span class="hljs-variable">src</span>=<span class="hljs-string">"character.image_url"</span>}}</span><span class="xml"><span class="hljs-tag">/&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        </span><span class="hljs-expression">{{<span class="hljs-end-block">/<span class="hljs-keyword">each</span></span>}}</span><span class="xml">
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-md-6"</span>&gt;</span>
+            </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">each</span> roleCheckboxes</span>}}</span><span class="xml">
+              <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
+                  </span><span class="hljs-expression">{{<span class="hljs-variable">input</span> <span class="hljs-variable">id</span>=<span class="hljs-variable">slug</span> <span class="hljs-variable">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-variable">checked</span>=<span class="hljs-variable">checked</span> <span class="hljs-variable">name</span>=<span class="hljs-variable">name</span>}}</span><span class="xml">
+                  </span><span class="hljs-expression">{{<span class="hljs-variable">name</span>}}</span><span class="xml">
+                <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            </span><span class="hljs-expression">{{<span class="hljs-end-block">/<span class="hljs-keyword">each</span></span>}}</span><span class="xml">
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-primary"</span> </span></span><span class="hljs-expression">{{<span class="hljs-variable"><span class="hljs-keyword">action</span></span> '<span class="hljs-variable">signup</span>'}}</span><span class="xml"><span class="hljs-tag">&gt;</span>Sign Up<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
