@@ -8,6 +8,6 @@ export <span class="hljs-keyword">default</span> Ember.Route.extend({
   afterModel: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(apikey, transition)</span> {</span>
     <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).setValue(<span class="hljs-string">'apikey'</span>, apikey);
     transition.send(<span class="hljs-string">'loadUser'</span>);
-    <span class="hljs-keyword">this</span>.transitionTo(<span class="hljs-string">'index'</span>);
+    <span class="hljs-keyword">this</span>.transitionTo(<span class="hljs-string">'raids.index'</span>);
   }
 });</div></div></div></div></body></html>

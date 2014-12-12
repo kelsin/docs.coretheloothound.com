@@ -4,7 +4,7 @@ export <span class="hljs-keyword">default</span> Ember.ObjectController.extend({
   number: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> id = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'id'</span>);
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'parentController.seated'</span>).filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
-      <span class="hljs-keyword">return</span> signup.get(<span class="hljs-string">'role.id'</span>) == id;
+      <span class="hljs-keyword">return</span> signup.get(<span class="hljs-string">'role.id'</span>) === id;
     }).get(<span class="hljs-string">'length'</span>);
   }.property(<span class="hljs-string">'parentController.seated.@each.role'</span>),
 

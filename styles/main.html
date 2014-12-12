@@ -74,14 +74,29 @@ svg {
   &amp;<span class="hljs-class">.right</span> &gt; <span class="hljs-class">.arrow</span><span class="hljs-pseudo">:after</span> {
     <span class="hljs-attribute">border-right-color</span><span class="hljs-value">: @gray-dark;</span>
   }
-}</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Session View</p></div></div><div class="code"><div class="wrapper"><span class="hljs-class">.auth</span> {
-  <span class="hljs-attribute">padding</span><span class="hljs-value">: <span class="hljs-number">10</span>px <span class="hljs-number">0</span>;</span>
-  <span class="hljs-attribute">text-align</span><span class="hljs-value">: right;</span>
-  <span class="hljs-attribute">overflow</span><span class="hljs-value">: auto;</span>
+}</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Header</p></div></div><div class="code"><div class="wrapper"><span class="hljs-tag">header</span> {
+  <span class="hljs-attribute">border-bottom</span><span class="hljs-value">: <span class="hljs-number">1</span>px solid @gray;</span>
 
-  <span class="hljs-tag">li</span> {
-    <span class="hljs-attribute">display</span><span class="hljs-value">: inline-block;</span>
-    <span class="hljs-attribute">padding-left</span><span class="hljs-value">: <span class="hljs-number">20</span>px;</span>
+  <span class="hljs-tag">div</span><span class="hljs-class">.wrapper</span> {
+    <span class="hljs-class">.make-row</span>();
+
+    <span class="hljs-tag">h1</span> {
+      <span class="hljs-class">.make-md-column</span>(6);
+      <span class="hljs-attribute">margin-top</span><span class="hljs-value">: <span class="hljs-number">15</span>px;</span>
+      <span class="hljs-attribute">margin-bottom</span><span class="hljs-value">: <span class="hljs-number">10</span>px;</span>
+      <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">1.6</span>em;</span>
+    }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Session View</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-class">.auth</span> {
+      <span class="hljs-class">.make-md-column</span>(6);
+      <span class="hljs-attribute">text-align</span><span class="hljs-value">: right;</span>
+      <span class="hljs-attribute">overflow</span><span class="hljs-value">: auto;</span>
+      <span class="hljs-attribute">margin-top</span><span class="hljs-value">: <span class="hljs-number">10</span>px;</span>
+      <span class="hljs-attribute">margin-bottom</span><span class="hljs-value">: <span class="hljs-number">10</span>px;</span>
+
+      <span class="hljs-tag">li</span> {
+        <span class="hljs-attribute">display</span><span class="hljs-value">: inline-block;</span>
+        <span class="hljs-attribute">padding-left</span><span class="hljs-value">: <span class="hljs-number">20</span>px;</span>
+      }
+    }
   }
 }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Character View</p></div></div><div class="code"><div class="wrapper"><span class="hljs-class">.characters</span> {
   <span class="hljs-class">.well</span> {
@@ -119,14 +134,40 @@ svg {
     }
   }
 }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Raids</p></div></div><div class="code"><div class="wrapper"><span class="hljs-class">.raid</span> {
-  <span class="hljs-class">.make-row</span>();
-
   <span class="hljs-tag">img</span><span class="hljs-class">.new-signup-image</span> {
     <span class="hljs-attribute">margin-top</span><span class="hljs-value">: <span class="hljs-number">10</span>px;</span>
   }
 
   <span class="hljs-tag">section</span><span class="hljs-class">.title</span> {
-    <span class="hljs-class">.make-md-column</span>(12);
+    <span class="hljs-class">.make-row</span>();
+
+    <span class="hljs-tag">h1</span> {
+      <span class="hljs-class">.make-md-column</span>(6);
+      <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">3</span>em;</span>
+      <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">50</span>px;</span>
+    }
+
+    <span class="hljs-class">.stats</span> {
+      <span class="hljs-class">.make-md-column</span>(6);
+      <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">50</span>px;</span>
+      <span class="hljs-attribute">margin</span><span class="hljs-value">: <span class="hljs-number">20</span>px <span class="hljs-number">0</span> <span class="hljs-number">10</span>px;</span>
+
+      <span class="hljs-class">.stat</span> {
+        <span class="hljs-attribute">line-height</span><span class="hljs-value">: <span class="hljs-number">50</span>px;</span>
+        <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">50</span>px;</span>
+        <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">1.4</span>em;</span>
+        <span class="hljs-attribute">float</span><span class="hljs-value">: right;</span>
+        <span class="hljs-attribute">padding-left</span><span class="hljs-value">: <span class="hljs-number">20</span>px;</span>
+      }
+    }
+  }
+
+  <span class="hljs-tag">section</span><span class="hljs-class">.title</span> {
+    <span class="hljs-class">.make-row</span>();
+  }
+
+  <span class="hljs-class">.raid-wrapper</span> {
+    <span class="hljs-class">.make-row</span>();
   }
 
   <span class="hljs-tag">section</span><span class="hljs-class">.info</span> {
@@ -155,16 +196,6 @@ svg {
         <span class="hljs-attribute">padding</span><span class="hljs-value">: <span class="hljs-number">10</span>px;</span>
         <span class="hljs-attribute">text-align</span><span class="hljs-value">: center;</span>
       }
-    }
-  }
-
-  <span class="hljs-tag">section</span><span class="hljs-class">.stats</span> {
-    <span class="hljs-class">.make-md-column</span>(9);
-    <span class="hljs-attribute">margin-bottom</span><span class="hljs-value">: <span class="hljs-number">0.7</span>em;</span>
-    <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">3</span>em;</span>
-
-    <span class="hljs-tag">div</span><span class="hljs-class">.stat</span> {
-      <span class="hljs-class">.make-md-column</span>(2);
     }
   }
 
