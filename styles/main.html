@@ -162,8 +162,16 @@ svg {
     }
   }
 
-  <span class="hljs-tag">section</span><span class="hljs-class">.title</span> {
+  <span class="hljs-tag">section</span><span class="hljs-class">.alerts</span> {
     <span class="hljs-class">.make-row</span>();
+
+    <span class="hljs-class">.wrapper</span> {
+      <span class="hljs-class">.make-md-column</span>(12);
+
+      <span class="hljs-class">.alert-success</span>, <span class="hljs-class">.alert-warning</span>, <span class="hljs-class">.alert-info</span>, <span class="hljs-class">.alert-danger</span> {
+        <span class="hljs-attribute">background-color</span><span class="hljs-value">: @gray-darker;</span>
+      }
+    }
   }
 
   <span class="hljs-class">.raid-wrapper</span> {
@@ -172,6 +180,29 @@ svg {
 
   <span class="hljs-tag">section</span><span class="hljs-class">.info</span> {
     <span class="hljs-class">.make-md-column</span>(3);
+  }
+
+  <span class="hljs-tag">section</span><span class="hljs-class">.seated</span>, <span class="hljs-tag">section</span><span class="hljs-class">.waiting-list</span> {
+    <span class="hljs-class">.make-md-column</span>(9);
+    <span class="hljs-attribute">margin-bottom</span><span class="hljs-value">: <span class="hljs-number">20</span>px;</span>
+
+    <span class="hljs-tag">h3</span> {
+      <span class="hljs-attribute">margin-top</span><span class="hljs-value">: <span class="hljs-number">0</span>;</span>
+    }
+
+    <span class="hljs-class">.wrapper</span> {
+      <span class="hljs-class">.make-row</span>();
+
+      <span class="hljs-class">.signup-wrapper</span> {
+        <span class="hljs-class">.make-md-column</span>(3);
+
+        <span class="hljs-class">.signup</span> {
+          <span class="hljs-attribute">border-radius</span><span class="hljs-value">: <span class="hljs-number">5</span>px;</span>
+          <span class="hljs-attribute">padding</span><span class="hljs-value">: <span class="hljs-number">5</span>px <span class="hljs-number">10</span>px;</span>
+          <span class="hljs-attribute">background-color</span><span class="hljs-value">: @gray-darker;</span>
+        }
+      }
+    }
   }
 
   <span class="hljs-tag">section</span><span class="hljs-class">.graphs</span> {

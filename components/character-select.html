@@ -8,7 +8,7 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
   roleCheckboxes: Ember.computed.map(<span class="hljs-string">'character.roles'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role)</span>{</span>
     <span class="hljs-keyword">return</span> Ember.ObjectProxy.create({
       content: role,
-      checked: <span class="hljs-literal">false</span>
+      checked: <span class="hljs-literal">true</span>
     });
   }),
 

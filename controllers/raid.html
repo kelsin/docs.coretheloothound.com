@@ -86,8 +86,28 @@ global _ </p></div></div><div class="code"><div class="wrapper">export <span cla
     }
   },
 
-  seated: Ember.computed.filterBy(<span class="hljs-string">'signups'</span>, <span class="hljs-string">'seated'</span>, <span class="hljs-literal">true</span>),
-  unseated: Ember.computed.filterBy(<span class="hljs-string">'signups'</span>, <span class="hljs-string">'seated'</span>, <span class="hljs-literal">false</span>),</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Waiting list doesn&#39;t include anyone from an account that has been seated</p></div></div><div class="code"><div class="wrapper">  waitingList: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  hasWaitingList: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'waitingList.length'</span>) &gt; <span class="hljs-number">0</span>;
+  }.property(<span class="hljs-string">'waitingList.length'</span>),
+
+  hasSeated: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'seated.length'</span>) &gt; <span class="hljs-number">0</span>;
+  }.property(<span class="hljs-string">'seated.length'</span>),
+
+  seatedUnsorted: Ember.computed.filterBy(<span class="hljs-string">'signups'</span>, <span class="hljs-string">'seated'</span>, <span class="hljs-literal">true</span>),
+  seatedSortFields: [<span class="hljs-string">'role.name:desc'</span>, <span class="hljs-string">'name'</span>],
+  seated: Ember.computed.sort(<span class="hljs-string">'seatedUnsorted'</span>, <span class="hljs-string">'seatedSortFields'</span>),
+  unseated: Ember.computed.filterBy(<span class="hljs-string">'signups'</span>, <span class="hljs-string">'seated'</span>, <span class="hljs-literal">false</span>),
+
+  currentAccountSeated: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> accountId = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'account.id'</span>).toString();
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'seated'</span>).findBy(<span class="hljs-string">'character.account.id'</span>, accountId);
+  }.property(<span class="hljs-string">'seated.@each.character'</span>, <span class="hljs-string">'account.id'</span>),
+
+  currentAccountSignedUp: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> accountId = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'account.id'</span>).toString();
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).filterBy(<span class="hljs-string">'character.account.id'</span>, accountId);
+  }.property(<span class="hljs-string">'signups.@each.character'</span>, <span class="hljs-string">'account.id'</span>),</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Waiting list doesn&#39;t include anyone from an account that has been seated</p></div></div><div class="code"><div class="wrapper">  waitingList: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> seated = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'seated'</span>);
     <span class="hljs-keyword">var</span> unseated = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'unseated'</span>);
     <span class="hljs-keyword">var</span> account_ids = seated.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
