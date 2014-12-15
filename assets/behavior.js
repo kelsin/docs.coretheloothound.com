@@ -300,6 +300,46 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/raid-permission.js",
+            "projectPath": "app/components/raid-permission.js",
+            "targetPath": "components/raid-permission",
+            "pageTitle": "components/raid-permission",
+            "title": "raid-permission"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/raid-permissions.js",
+            "projectPath": "app/components/raid-permissions.js",
+            "targetPath": "components/raid-permissions",
+            "pageTitle": "components/raid-permissions",
+            "title": "raid-permissions"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/raid-signup.js",
             "projectPath": "app/components/raid-signup.js",
             "targetPath": "components/raid-signup",
@@ -1364,6 +1404,48 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                 "targetPath": "templates/components/donut-graph",
                 "pageTitle": "templates/components/donut-graph",
                 "title": "donut-graph"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/components/raid-permission.hbs",
+                "projectPath": "app/templates/components/raid-permission.hbs",
+                "targetPath": "templates/components/raid-permission",
+                "pageTitle": "templates/components/raid-permission",
+                "title": "raid-permission"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/components/raid-permissions.hbs",
+                "projectPath": "app/templates/components/raid-permissions.hbs",
+                "targetPath": "templates/components/raid-permissions",
+                "pageTitle": "templates/components/raid-permissions",
+                "title": "raid-permissions"
               },
               "depth": 3,
               "outline": []
