@@ -3,5 +3,10 @@
 export <span class="hljs-keyword">default</span> Ember.Route.extend({
   model: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.store.find(<span class="hljs-string">'raid'</span>);
+  },
+
+  setupController: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(controller, model)</span> {</span>
+    controller.set(<span class="hljs-string">'model'</span>, model);
+    controller.set(<span class="hljs-string">'roles'</span>, <span class="hljs-keyword">this</span>.store.all(<span class="hljs-string">'role'</span>));
   }
 });</div></div></div></div></body></html>
