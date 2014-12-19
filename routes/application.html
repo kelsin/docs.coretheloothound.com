@@ -58,6 +58,24 @@ export <span class="hljs-keyword">default</span> Ember.Route.extend({
   actions: {
     loadUser: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
       <span class="hljs-keyword">this</span>.refresh();
+    },
+
+    login: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+      Ember.$.ajax({
+        type: <span class="hljs-string">'GET'</span>,
+        url: ENV.api + <span class="hljs-string">'/login'</span>,
+        headers: {
+          Accept: <span class="hljs-string">'application/json+ember'</span>
+        },
+        data: {
+          redirect: window.location.protocol +
+            <span class="hljs-string">'//'</span> + window.location.host +
+            <span class="hljs-string">'/#/apikey/'</span>
+        },
+        success: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> {</span>
+          window.location = data.href;
+        }
+      });
     }
   }
 });</div></div></div></div></body></html>

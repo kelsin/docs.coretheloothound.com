@@ -7,24 +7,6 @@ import Ember from <span class="hljs-string">'ember'</span>;</div></div></div><di
   loggedIn: Ember.computed.alias(<span class="hljs-string">'controllers.application.loggedIn'</span>),
 
   actions: {
-    login: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-      Ember.$.ajax({
-        type: <span class="hljs-string">'GET'</span>,
-        url: ENV.api + <span class="hljs-string">'/login'</span>,
-        headers: {
-          Accept: <span class="hljs-string">'application/json+ember'</span>
-        },
-        data: {
-          redirect: window.location.protocol +
-            <span class="hljs-string">'//'</span> + window.location.host +
-            <span class="hljs-string">'/#/apikey/'</span>
-        },
-        success: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> {</span>
-          window.location = data.href;
-        }
-      });
-    },
-
     logout: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
       <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
 
@@ -32,7 +14,7 @@ import Ember from <span class="hljs-string">'ember'</span>;</div></div></div><di
         type: <span class="hljs-string">'GET'</span>,
         url: ENV.api + <span class="hljs-string">'/logout'</span>,
         headers: {
-          Authorization: <span class="hljs-string">'apikey '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'apikey'</span>)
+          Authorization: <span class="hljs-string">'apikey '</span> + _this.get(<span class="hljs-string">'apikey'</span>)
         },
         success: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
           _this.get(<span class="hljs-string">'storage'</span>).removeValue(<span class="hljs-string">'apikey'</span>);
