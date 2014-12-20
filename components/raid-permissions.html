@@ -20,13 +20,13 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
     newMemberCharacterPermission: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">'newPermission'</span>,
                       <span class="hljs-string">'member'</span>,
-                      <span class="hljs-string">'Character|'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'characterName'</span>) + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'characterRealm'</span>));
+                      <span class="hljs-string">'Character|'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'characterName'</span>) + <span class="hljs-string">':'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'characterRealm'</span>));
     },
 
     newMemberGuildPermission: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">'newPermission'</span>,
                       <span class="hljs-string">'member'</span>,
-                      <span class="hljs-string">'Guild|'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guildName'</span>) + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guildRealm'</span>));
+                      <span class="hljs-string">'Guild|'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guildName'</span>) + <span class="hljs-string">':'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guildRealm'</span>));
     },
 
     deletePermission: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(permission)</span> {</span>
