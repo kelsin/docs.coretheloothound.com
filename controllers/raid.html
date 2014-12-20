@@ -100,6 +100,17 @@ global _ </p></div></div><div class="code"><div class="wrapper">export <span cla
   seated: Ember.computed.sort(<span class="hljs-string">'seatedUnsorted'</span>, <span class="hljs-string">'seatedSortFields'</span>),
   unseated: Ember.computed.filterBy(<span class="hljs-string">'signups'</span>, <span class="hljs-string">'seated'</span>, <span class="hljs-literal">false</span>),
 
+  seatedByRole: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'sortedRoles'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role)</span> {</span>
+      <span class="hljs-keyword">return</span> Ember.Object.create({
+        role: role,
+        signups: _this.get(<span class="hljs-string">'seated'</span>).filterBy(<span class="hljs-string">'role.id'</span>, role.get(<span class="hljs-string">'id'</span>))
+      });
+    });
+  }.property(<span class="hljs-string">'sortedRoles.@each.id'</span>, <span class="hljs-string">'seated.@each.role'</span>),
+
   currentAccountSeated: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> accountId = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'account.id'</span>).toString();
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'seated'</span>).findBy(<span class="hljs-string">'character.account.id'</span>, accountId);
@@ -116,8 +127,20 @@ global _ </p></div></div><div class="code"><div class="wrapper">export <span cla
     }).uniq();
     <span class="hljs-keyword">return</span> unseated.filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
       <span class="hljs-keyword">return</span> !account_ids.contains(signup.get(<span class="hljs-string">'character.account.id'</span>));
-    });
+    }).sortBy(<span class="hljs-string">'character.account.battletag'</span>);
   }.property(<span class="hljs-string">'seated.@each'</span>, <span class="hljs-string">'unseated.@each'</span>),
+
+  waitingListByAccount: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'waitingList'</span>).mapBy(<span class="hljs-string">'character.account'</span>).uniq().map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(account)</span> {</span>
+      console.log(account);
+      <span class="hljs-keyword">return</span> Ember.Object.create({
+        account: account,
+        signups: _this.get(<span class="hljs-string">'waitingList'</span>).filterBy(<span class="hljs-string">'character.account.id'</span>, account.get(<span class="hljs-string">'id'</span>))
+      });
+    });
+  }.property(<span class="hljs-string">'waitingList.@each.account'</span>),
 
   seatedClassData: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> className = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'className'</span>);
