@@ -110,7 +110,7 @@ svg {
       <span class="hljs-class">.make-md-column</span>(12);
     }
 
-    <span class="hljs-class">.character</span> {
+    <span class="hljs-tag">div</span><span class="hljs-class">.character</span> {
       <span class="hljs-attribute">overflow</span><span class="hljs-value">: auto;</span>
       <span class="hljs-attribute">margin-bottom</span><span class="hljs-value">: <span class="hljs-number">20</span>px;</span>
       <span class="hljs-class">.make-sm-column</span>(6);
@@ -119,7 +119,14 @@ svg {
 
       <span class="hljs-tag">img</span> {
         <span class="hljs-attribute">float</span><span class="hljs-value">: left;</span>
+        <span class="hljs-attribute">margin</span><span class="hljs-value">: <span class="hljs-number">0</span>;</span>
         <span class="hljs-attribute">padding</span><span class="hljs-value">: <span class="hljs-number">0</span> <span class="hljs-number">10</span>px <span class="hljs-number">10</span>px <span class="hljs-number">0</span>;</span>
+
+        &amp;<span class="hljs-class">.character</span> {
+          <span class="hljs-attribute">padding</span><span class="hljs-value">: <span class="hljs-number">0</span>;</span>
+          <span class="hljs-attribute">margin</span><span class="hljs-value">: <span class="hljs-number">0</span> <span class="hljs-number">10</span>px <span class="hljs-number">10</span>px <span class="hljs-number">0</span>;</span>
+          <span class="hljs-attribute">border-radius</span><span class="hljs-value">: <span class="hljs-number">5</span>px;</span>
+        }
       }
 
       &amp; &gt; <span class="hljs-tag">h3</span> {
