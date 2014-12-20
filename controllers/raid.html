@@ -134,7 +134,6 @@ global _ </p></div></div><div class="code"><div class="wrapper">export <span cla
     <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
 
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'waitingList'</span>).mapBy(<span class="hljs-string">'character.account'</span>).uniq().map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(account)</span> {</span>
-      console.log(account);
       <span class="hljs-keyword">return</span> Ember.Object.create({
         account: account,
         signups: _this.get(<span class="hljs-string">'waitingList'</span>).filterBy(<span class="hljs-string">'character.account.id'</span>, account.get(<span class="hljs-string">'id'</span>))
