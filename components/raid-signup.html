@@ -6,8 +6,14 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
   rolesSorting: [<span class="hljs-string">'slug:desc'</span>],
   sortedRoles: Ember.computed.sort(<span class="hljs-string">'signup.roles'</span>, <span class="hljs-string">'rolesSorting'</span>),
 
+  attributeBindings: [<span class="hljs-string">'note:title'</span>],
+
+  note: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.note'</span>);
+  }.property(<span class="hljs-string">'signup.note'</span>),
+
   classes: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">var</span> classes = <span class="hljs-string">'class-'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.character.class_id'</span>);
+    <span class="hljs-keyword">var</span> classes = <span class="hljs-string">'class class-'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.character.class_id'</span>);
     <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'preferred'</span>)) {
       classes += <span class="hljs-string">' preferred'</span>;
     }
