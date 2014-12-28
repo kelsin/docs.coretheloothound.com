@@ -26,7 +26,6 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
       <span class="hljs-keyword">var</span> roles = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'roles'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role)</span> {</span>
         <span class="hljs-keyword">return</span> role.get(<span class="hljs-string">'id'</span>);
       });
-      alert(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'note'</span>));
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">"action"</span>,
                       <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'character'</span>),
                       <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'note'</span>),
