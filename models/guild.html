@@ -4,5 +4,15 @@ export <span class="hljs-keyword">default</span> DS.Model.extend({
   name: DS.attr(<span class="hljs-string">'string'</span>),
   realm: DS.attr(<span class="hljs-string">'string'</span>),
 
-  characters: DS.hasMany(<span class="hljs-string">'character'</span>)
+  characters: DS.hasMany(<span class="hljs-string">'character'</span>),
+
+  fullName: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'name'</span>) + <span class="hljs-string">' - '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'realm'</span>);
+  }.property(<span class="hljs-string">'name'</span>, <span class="hljs-string">'realm'</span>),
+
+  url: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'http://us.battle.net/wow/guild/'</span> +
+      <span class="hljs-built_in">encodeURIComponent</span>(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'realm'</span>)) + <span class="hljs-string">'/'</span> +
+      <span class="hljs-built_in">encodeURIComponent</span>(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'name'</span>)) + <span class="hljs-string">'/'</span>;
+  }.property(<span class="hljs-string">'name'</span>, <span class="hljs-string">'realm'</span>)
 });</div></div></div></div></body></html>
