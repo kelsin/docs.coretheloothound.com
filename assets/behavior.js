@@ -13,7 +13,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "commentsOnly": true,
           "name": "Markdown"
         },
-        "sourcePath": "/Users/cgiroir/src/coretheloothound/README.md",
+        "sourcePath": "/Users/kelsin/src/coretheloothound/README.md",
         "projectPath": "README.md",
         "targetPath": "index",
         "pageTitle": "index",
@@ -190,7 +190,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/adapters/application.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/adapters/application.js",
             "projectPath": "app/adapters/application.js",
             "targetPath": "adapters/application",
             "pageTitle": "adapters/application",
@@ -212,7 +212,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "foldPrefix": "^",
           "name": "JavaScript"
         },
-        "sourcePath": "/Users/cgiroir/src/coretheloothound/app/app.js",
+        "sourcePath": "/Users/kelsin/src/coretheloothound/app/app.js",
         "projectPath": "app/app.js",
         "targetPath": "app",
         "pageTitle": "app",
@@ -240,7 +240,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/character-select.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/character-select.js",
             "projectPath": "app/components/character-select.js",
             "targetPath": "components/character-select",
             "pageTitle": "components/character-select",
@@ -260,7 +260,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/date-time.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/date-time.js",
             "projectPath": "app/components/date-time.js",
             "targetPath": "components/date-time",
             "pageTitle": "components/date-time",
@@ -280,7 +280,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/donut-graph.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/donut-graph.js",
             "projectPath": "app/components/donut-graph.js",
             "targetPath": "components/donut-graph",
             "pageTitle": "components/donut-graph",
@@ -300,7 +300,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/guild-select.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/guild-select.js",
             "projectPath": "app/components/guild-select.js",
             "targetPath": "components/guild-select",
             "pageTitle": "components/guild-select",
@@ -320,7 +320,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/raid-permission.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/raid-permission.js",
             "projectPath": "app/components/raid-permission.js",
             "targetPath": "components/raid-permission",
             "pageTitle": "components/raid-permission",
@@ -340,7 +340,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/raid-permissions.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/raid-permissions.js",
             "projectPath": "app/components/raid-permissions.js",
             "targetPath": "components/raid-permissions",
             "pageTitle": "components/raid-permissions",
@@ -360,7 +360,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/raid-signup.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/raid-signup.js",
             "projectPath": "app/components/raid-signup.js",
             "targetPath": "components/raid-signup",
             "pageTitle": "components/raid-signup",
@@ -390,7 +390,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/account.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/account.js",
             "projectPath": "app/controllers/account.js",
             "targetPath": "controllers/account",
             "pageTitle": "controllers/account",
@@ -410,7 +410,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/application.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/application.js",
             "projectPath": "app/controllers/application.js",
             "targetPath": "controllers/application",
             "pageTitle": "controllers/application",
@@ -430,7 +430,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/auth.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/auth.js",
             "projectPath": "app/controllers/auth.js",
             "targetPath": "controllers/auth",
             "pageTitle": "controllers/auth",
@@ -450,7 +450,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/character.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/character.js",
             "projectPath": "app/controllers/character.js",
             "targetPath": "controllers/character",
             "pageTitle": "controllers/character",
@@ -478,7 +478,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "JavaScript"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/characters/index.js",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/characters/index.js",
                 "projectPath": "app/controllers/characters/index.js",
                 "targetPath": "controllers/characters/index",
                 "pageTitle": "controllers/characters/index",
@@ -500,7 +500,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/raid.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/raid.js",
             "projectPath": "app/controllers/raid.js",
             "targetPath": "controllers/raid",
             "pageTitle": "controllers/raid",
@@ -528,7 +528,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "JavaScript"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/raids/index.js",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/raids/index.js",
                 "projectPath": "app/controllers/raids/index.js",
                 "targetPath": "controllers/raids/index",
                 "pageTitle": "controllers/raids/index",
@@ -548,7 +548,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "JavaScript"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/raids/new.js",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/raids/new.js",
                 "projectPath": "app/controllers/raids/new.js",
                 "targetPath": "controllers/raids/new",
                 "pageTitle": "controllers/raids/new",
@@ -570,7 +570,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/role.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/role.js",
             "projectPath": "app/controllers/role.js",
             "targetPath": "controllers/role",
             "pageTitle": "controllers/role",
@@ -590,7 +590,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/signup.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/signup.js",
             "projectPath": "app/controllers/signup.js",
             "targetPath": "controllers/signup",
             "pageTitle": "controllers/signup",
@@ -620,7 +620,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/helpers/character-class.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/helpers/character-class.js",
             "projectPath": "app/helpers/character-class.js",
             "targetPath": "helpers/character-class",
             "pageTitle": "helpers/character-class",
@@ -640,7 +640,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/helpers/character-faction.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/helpers/character-faction.js",
             "projectPath": "app/helpers/character-faction.js",
             "targetPath": "helpers/character-faction",
             "pageTitle": "helpers/character-faction",
@@ -660,7 +660,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/helpers/character-race.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/helpers/character-race.js",
             "projectPath": "app/helpers/character-race.js",
             "targetPath": "helpers/character-race",
             "pageTitle": "helpers/character-race",
@@ -690,7 +690,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/initializers/link-view.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/initializers/link-view.js",
             "projectPath": "app/initializers/link-view.js",
             "targetPath": "initializers/link-view",
             "pageTitle": "initializers/link-view",
@@ -710,7 +710,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/initializers/storage.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/initializers/storage.js",
             "projectPath": "app/initializers/storage.js",
             "targetPath": "initializers/storage",
             "pageTitle": "initializers/storage",
@@ -740,7 +740,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/mixins/after-render.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/mixins/after-render.js",
             "projectPath": "app/mixins/after-render.js",
             "targetPath": "mixins/after-render",
             "pageTitle": "mixins/after-render",
@@ -770,7 +770,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/account.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/account.js",
             "projectPath": "app/models/account.js",
             "targetPath": "models/account",
             "pageTitle": "models/account",
@@ -790,7 +790,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/character.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/character.js",
             "projectPath": "app/models/character.js",
             "targetPath": "models/character",
             "pageTitle": "models/character",
@@ -810,7 +810,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/guild.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/guild.js",
             "projectPath": "app/models/guild.js",
             "targetPath": "models/guild",
             "pageTitle": "models/guild",
@@ -830,7 +830,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/permission.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/permission.js",
             "projectPath": "app/models/permission.js",
             "targetPath": "models/permission",
             "pageTitle": "models/permission",
@@ -850,7 +850,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/permissioned.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/permissioned.js",
             "projectPath": "app/models/permissioned.js",
             "targetPath": "models/permissioned",
             "pageTitle": "models/permissioned",
@@ -870,7 +870,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/raid.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/raid.js",
             "projectPath": "app/models/raid.js",
             "targetPath": "models/raid",
             "pageTitle": "models/raid",
@@ -890,7 +890,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/role.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/role.js",
             "projectPath": "app/models/role.js",
             "targetPath": "models/role",
             "pageTitle": "models/role",
@@ -910,7 +910,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/signup.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/signup.js",
             "projectPath": "app/models/signup.js",
             "targetPath": "models/signup",
             "pageTitle": "models/signup",
@@ -930,7 +930,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/storage.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/models/storage.js",
             "projectPath": "app/models/storage.js",
             "targetPath": "models/storage",
             "pageTitle": "models/storage",
@@ -981,7 +981,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "foldPrefix": "^",
           "name": "JavaScript"
         },
-        "sourcePath": "/Users/cgiroir/src/coretheloothound/app/router.js",
+        "sourcePath": "/Users/kelsin/src/coretheloothound/app/router.js",
         "projectPath": "app/router.js",
         "targetPath": "router",
         "pageTitle": "router",
@@ -1009,7 +1009,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/routes/apikey.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/routes/apikey.js",
             "projectPath": "app/routes/apikey.js",
             "targetPath": "routes/apikey",
             "pageTitle": "routes/apikey",
@@ -1029,7 +1029,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/routes/application.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/routes/application.js",
             "projectPath": "app/routes/application.js",
             "targetPath": "routes/application",
             "pageTitle": "routes/application",
@@ -1057,7 +1057,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "JavaScript"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/routes/characters/index.js",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/routes/characters/index.js",
                 "projectPath": "app/routes/characters/index.js",
                 "targetPath": "routes/characters/index",
                 "pageTitle": "routes/characters/index",
@@ -1079,7 +1079,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/routes/raid.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/routes/raid.js",
             "projectPath": "app/routes/raid.js",
             "targetPath": "routes/raid",
             "pageTitle": "routes/raid",
@@ -1107,7 +1107,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "JavaScript"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/routes/raids/index.js",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/routes/raids/index.js",
                 "projectPath": "app/routes/raids/index.js",
                 "targetPath": "routes/raids/index",
                 "pageTitle": "routes/raids/index",
@@ -1139,7 +1139,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/serializers/signup.js",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/serializers/signup.js",
             "projectPath": "app/serializers/signup.js",
             "targetPath": "serializers/signup",
             "pageTitle": "serializers/signup",
@@ -1169,7 +1169,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "LESS"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/styles/app.less",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/styles/app.less",
             "projectPath": "app/styles/app.less",
             "targetPath": "styles/app",
             "pageTitle": "styles/app",
@@ -1189,7 +1189,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "LESS"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/styles/main.less",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/styles/main.less",
             "projectPath": "app/styles/main.less",
             "targetPath": "styles/main",
             "pageTitle": "styles/main",
@@ -1209,7 +1209,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "LESS"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/styles/variables.less",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/styles/variables.less",
             "projectPath": "app/styles/variables.less",
             "targetPath": "styles/variables",
             "pageTitle": "styles/variables",
@@ -1240,7 +1240,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/account.hbs",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/account.hbs",
             "projectPath": "app/templates/account.hbs",
             "targetPath": "templates/account",
             "pageTitle": "templates/account",
@@ -1261,7 +1261,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/apikey.hbs",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/apikey.hbs",
             "projectPath": "app/templates/apikey.hbs",
             "targetPath": "templates/apikey",
             "pageTitle": "templates/apikey",
@@ -1282,7 +1282,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/application.hbs",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/application.hbs",
             "projectPath": "app/templates/application.hbs",
             "targetPath": "templates/application",
             "pageTitle": "templates/application",
@@ -1303,7 +1303,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/auth.hbs",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/auth.hbs",
             "projectPath": "app/templates/auth.hbs",
             "targetPath": "templates/auth",
             "pageTitle": "templates/auth",
@@ -1324,7 +1324,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/characters.hbs",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/characters.hbs",
             "projectPath": "app/templates/characters.hbs",
             "targetPath": "templates/characters",
             "pageTitle": "templates/characters",
@@ -1346,7 +1346,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/characters/index.hbs",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/characters/index.hbs",
                 "projectPath": "app/templates/characters/index.hbs",
                 "targetPath": "templates/characters/index",
                 "pageTitle": "templates/characters/index",
@@ -1377,7 +1377,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/components/character-select.hbs",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/components/character-select.hbs",
                 "projectPath": "app/templates/components/character-select.hbs",
                 "targetPath": "templates/components/character-select",
                 "pageTitle": "templates/components/character-select",
@@ -1398,7 +1398,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/components/date-time.hbs",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/components/date-time.hbs",
                 "projectPath": "app/templates/components/date-time.hbs",
                 "targetPath": "templates/components/date-time",
                 "pageTitle": "templates/components/date-time",
@@ -1419,7 +1419,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/components/donut-graph.hbs",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/components/donut-graph.hbs",
                 "projectPath": "app/templates/components/donut-graph.hbs",
                 "targetPath": "templates/components/donut-graph",
                 "pageTitle": "templates/components/donut-graph",
@@ -1440,7 +1440,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/components/guild-select.hbs",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/components/guild-select.hbs",
                 "projectPath": "app/templates/components/guild-select.hbs",
                 "targetPath": "templates/components/guild-select",
                 "pageTitle": "templates/components/guild-select",
@@ -1461,7 +1461,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/components/raid-permission.hbs",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/components/raid-permission.hbs",
                 "projectPath": "app/templates/components/raid-permission.hbs",
                 "targetPath": "templates/components/raid-permission",
                 "pageTitle": "templates/components/raid-permission",
@@ -1482,7 +1482,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/components/raid-permissions.hbs",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/components/raid-permissions.hbs",
                 "projectPath": "app/templates/components/raid-permissions.hbs",
                 "targetPath": "templates/components/raid-permissions",
                 "pageTitle": "templates/components/raid-permissions",
@@ -1503,7 +1503,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/components/raid-signup.hbs",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/components/raid-signup.hbs",
                 "projectPath": "app/templates/components/raid-signup.hbs",
                 "targetPath": "templates/components/raid-signup",
                 "pageTitle": "templates/components/raid-signup",
@@ -1526,7 +1526,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/loading.hbs",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/loading.hbs",
             "projectPath": "app/templates/loading.hbs",
             "targetPath": "templates/loading",
             "pageTitle": "templates/loading",
@@ -1547,7 +1547,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/raid.hbs",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/raid.hbs",
             "projectPath": "app/templates/raid.hbs",
             "targetPath": "templates/raid",
             "pageTitle": "templates/raid",
@@ -1568,7 +1568,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/raids.hbs",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/raids.hbs",
             "projectPath": "app/templates/raids.hbs",
             "targetPath": "templates/raids",
             "pageTitle": "templates/raids",
@@ -1590,7 +1590,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/raids/index.hbs",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/raids/index.hbs",
                 "projectPath": "app/templates/raids/index.hbs",
                 "targetPath": "templates/raids/index",
                 "pageTitle": "templates/raids/index",
@@ -1611,7 +1611,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/raids/new.hbs",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/raids/new.hbs",
                 "projectPath": "app/templates/raids/new.hbs",
                 "targetPath": "templates/raids/new",
                 "pageTitle": "templates/raids/new",
@@ -1634,7 +1634,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/user.hbs",
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/user.hbs",
             "projectPath": "app/templates/user.hbs",
             "targetPath": "templates/user",
             "pageTitle": "templates/user",
@@ -1672,7 +1672,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "JavaScript"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/views/raids/index.js",
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/views/raids/index.js",
                 "projectPath": "app/views/raids/index.js",
                 "targetPath": "views/raids/index",
                 "pageTitle": "views/raids/index",
