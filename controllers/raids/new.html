@@ -7,6 +7,7 @@
     <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'name'</span>, <span class="hljs-string">''</span>);
     <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'date'</span>,
              moment().endOf(<span class="hljs-string">'isoWeek'</span>).hour(<span class="hljs-number">19</span>).minute(<span class="hljs-number">0</span>).second(<span class="hljs-number">0</span>).add(<span class="hljs-number">2</span>, <span class="hljs-string">'days'</span>).toDate());
+    <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'hidden'</span>, <span class="hljs-literal">true</span>);
   },
 
   actions: {
@@ -16,7 +17,8 @@
       <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.store.createRecord(<span class="hljs-string">'raid'</span>, {
         name: <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'name'</span>),
         guild: <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guild'</span>),
-        date: <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'date'</span>)
+        date: <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'date'</span>),
+        hidden: <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'hidden'</span>)
       });
 
       raid.save().then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(raid)</span> {</span>

@@ -14,6 +14,10 @@ import CharacterController from <span class="hljs-string">'./character'</span>;<
     });
   }.property(<span class="hljs-string">'signups.@each.character'</span>),
 
+  hiddenAndNotFinalized: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'hidden'</span>) &amp;&amp; !<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'finalized'</span>);
+  }.property(<span class="hljs-string">'hidden'</span>, <span class="hljs-string">'finalized'</span>),
+
   rolesSorting: [<span class="hljs-string">'slug:desc'</span>],
   sortedRoles: Ember.computed.sort(<span class="hljs-string">'roles'</span>, <span class="hljs-string">'rolesSorting'</span>),
 
