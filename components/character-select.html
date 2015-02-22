@@ -1,11 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><title>components/character-select</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="components/character-select"><meta name="groc-project-path" content="app/components/character-select.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/components/character-select.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;
 
 export <span class="hljs-keyword">default</span> Ember.Component.extend({
-  init: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">this</span>._super();
-    <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'note'</span>, <span class="hljs-string">''</span>);
-  },
-
   character: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'characters'</span>).get(<span class="hljs-string">'firstObject'</span>);
   }.property(<span class="hljs-string">'characters.@each'</span>),
@@ -23,14 +18,12 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
 
   actions: {
     signup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-      <span class="hljs-keyword">var</span> roles = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'roles'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role)</span> {</span>
-        <span class="hljs-keyword">return</span> role.get(<span class="hljs-string">'id'</span>);
-      });
+      <span class="hljs-keyword">var</span> role_ids = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'roles'</span>).mapBy(<span class="hljs-string">'id'</span>);
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">"action"</span>,
                       <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'character'</span>),
                       <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'note'</span>),
-                      roles);
-      <span class="hljs-keyword">this</span>.init();
+                      role_ids);
+      <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'note'</span>, <span class="hljs-string">''</span>);
     }
   }
 });</div></div></div></div></body></html>
