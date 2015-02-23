@@ -7,6 +7,6 @@ export <span class="hljs-keyword">default</span> DS.Model.extend({
   class_ids: DS.attr(),
 
   iconClasses: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-string">'fa fa-'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'icon'</span>) + <span class="hljs-string">' fa-fw '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'slug'</span>);
-  }.property(<span class="hljs-string">'icon'</span>, <span class="hljs-string">'slug'</span>)
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'role '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'slug'</span>);
+  }.property(<span class="hljs-string">'slug'</span>)
 });</div></div></div></div></body></html>

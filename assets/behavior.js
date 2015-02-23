@@ -1189,6 +1189,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "LESS"
             },
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/styles/icon.less",
+            "projectPath": "app/styles/icon.less",
+            "targetPath": "styles/icon",
+            "pageTitle": "styles/icon",
+            "title": "icon"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".less"],
+              "pygmentsLexer": "sass",
+              "highlightJS": "scss",
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "LESS"
+            },
             "sourcePath": "/Users/kelsin/src/coretheloothound/app/styles/main.less",
             "projectPath": "app/styles/main.less",
             "targetPath": "styles/main",
