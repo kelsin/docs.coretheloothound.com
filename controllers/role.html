@@ -9,10 +9,10 @@ export <span class="hljs-keyword">default</span> Ember.ObjectController.extend({
   }.property(<span class="hljs-string">'parentController.seated.@each.role'</span>),
 
   statClasses: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-string">'stat role-'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'slug'</span>);
-  }.property(<span class="hljs-string">'slug'</span>),
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'stat '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'iconClasses'</span>);
+  }.property(<span class="hljs-string">'iconClasses'</span>),
 
   iconClasses: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-string">'icon-20 icon-'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'slug'</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'role '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'slug'</span>);
   }.property(<span class="hljs-string">'slug'</span>)
 });</div></div></div></div></body></html>
