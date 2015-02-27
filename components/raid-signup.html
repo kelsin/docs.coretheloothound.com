@@ -6,7 +6,8 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
   rolesSorting: [<span class="hljs-string">'slug:desc'</span>],
   sortedRoles: Ember.computed.sort(<span class="hljs-string">'signup.roles'</span>, <span class="hljs-string">'rolesSorting'</span>),
 
-  attributeBindings: [<span class="hljs-string">'note:title'</span>],
+  attributeBindings: [<span class="hljs-string">'draggable:draggable'</span>, <span class="hljs-string">'note:title'</span>],
+  draggable: <span class="hljs-literal">true</span>,
 
   note: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.note'</span>);

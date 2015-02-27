@@ -9,6 +9,30 @@
   },
 
   actions: {
+    hide: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+      <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
+      raid.set(<span class="hljs-string">'hidden'</span>, <span class="hljs-literal">true</span>);
+      raid.save();
+    },
+
+    unhide: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+      <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
+      raid.set(<span class="hljs-string">'hidden'</span>, <span class="hljs-literal">false</span>);
+      raid.save();
+    },
+
+    finalize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+      <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
+      raid.set(<span class="hljs-string">'finalized'</span>, <span class="hljs-literal">true</span>);
+      raid.save();
+    },
+
+    unfinalize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+      <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
+      raid.set(<span class="hljs-string">'finalized'</span>, <span class="hljs-literal">false</span>);
+      raid.save();
+    },
+
     seat: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup, role)</span> {</span>
       signup.set(<span class="hljs-string">'seated'</span>, <span class="hljs-literal">true</span>);
       signup.set(<span class="hljs-string">'role'</span>, role);

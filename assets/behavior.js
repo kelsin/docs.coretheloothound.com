@@ -320,6 +320,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/raid-group.js",
+            "projectPath": "app/components/raid-group.js",
+            "targetPath": "components/raid-group",
+            "pageTitle": "components/raid-group",
+            "title": "raid-group"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/Users/kelsin/src/coretheloothound/app/components/raid-permission.js",
             "projectPath": "app/components/raid-permission.js",
             "targetPath": "components/raid-permission",
@@ -1465,6 +1485,27 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                 "targetPath": "templates/components/guild-select",
                 "pageTitle": "templates/components/guild-select",
                 "title": "guild-select"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/components/raid-group.hbs",
+                "projectPath": "app/templates/components/raid-group.hbs",
+                "targetPath": "templates/components/raid-group",
+                "pageTitle": "templates/components/raid-group",
+                "title": "raid-group"
               },
               "depth": 3,
               "outline": []

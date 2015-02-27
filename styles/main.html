@@ -14,6 +14,16 @@
 <span class="hljs-class">.healing</span> { <span class="hljs-attribute">color</span><span class="hljs-value">: @healing;</span> }
 <span class="hljs-class">.dps</span> { <span class="hljs-attribute">color</span><span class="hljs-value">: @dps;</span> }
 
+<span class="hljs-attr_selector">[draggable]</span> {
+  -moz-user-<span class="hljs-tag">select</span><span class="hljs-value">: none;</span>
+  -khtml-user-<span class="hljs-tag">select</span><span class="hljs-value">: none;</span>
+  -webkit-user-<span class="hljs-tag">select</span><span class="hljs-value">: none;</span>
+  user-<span class="hljs-tag">select</span><span class="hljs-value">: none;</span>
+  <span class="hljs-comment">/* Required to make elements draggable in old WebKit */</span>
+  -khtml-user-drag<span class="hljs-value">: element;</span>
+  -webkit-user-drag<span class="hljs-value">: element;</span>
+}
+
 svg {
   <span class="hljs-class">.class-1</span> { fill<span class="hljs-value">: @warrior;</span> }
   <span class="hljs-class">.class-2</span> { fill<span class="hljs-value">: @paladin;</span> }
@@ -153,6 +163,25 @@ svg {
       <span class="hljs-attribute">color</span><span class="hljs-value">: @gray;</span>
     }
   }
+
+  <span class="hljs-class">.emblem</span> {
+    <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">40</span>px;</span>
+    <span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">40</span>px;</span>
+    <span class="hljs-attribute">float</span><span class="hljs-value">: left;</span>
+    <span class="hljs-attribute">margin-right</span><span class="hljs-value">: <span class="hljs-number">5</span>px;</span>
+
+    <span class="hljs-class">.background</span> {
+      <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">100</span>%;</span>
+      <span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">100</span>%;</span>
+      <span class="hljs-attribute">border-width</span><span class="hljs-value">: <span class="hljs-number">3</span>px;</span>
+      <span class="hljs-attribute">border-style</span><span class="hljs-value">: solid;</span>
+
+      <span class="hljs-class">.icon</span> {
+        <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">100</span>%;</span>
+        <span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">100</span>%;</span>
+      }
+    }
+  }
 }
 
 <span class="hljs-class">.raid</span> {
@@ -202,6 +231,10 @@ svg {
 
   <span class="hljs-tag">section</span><span class="hljs-class">.info</span> {
     <span class="hljs-class">.make-md-column</span>(3);
+
+    <span class="hljs-tag">a</span> {
+      <span class="hljs-attribute">cursor</span><span class="hljs-value">: pointer;</span>
+    }
   }
 
   <span class="hljs-tag">section</span><span class="hljs-class">.signups</span> {
@@ -219,6 +252,64 @@ svg {
     <span class="hljs-tag">h4</span> {
       <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">0.8</span>em;</span>
       <span class="hljs-attribute">margin</span><span class="hljs-value">: <span class="hljs-number">11</span>px <span class="hljs-number">10</span>px <span class="hljs-number">4</span>px;</span>
+    }
+
+    <span class="hljs-class">.group</span> {
+      <span class="hljs-class">.make-row</span>();
+      <span class="hljs-attribute">min-height</span><span class="hljs-value">: <span class="hljs-number">100</span>px;</span>
+      <span class="hljs-attribute">margin-bottom</span><span class="hljs-value">: <span class="hljs-number">20</span>px;</span>
+
+      <span class="hljs-class">.targets</span> {
+        <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-hexcolor">#000</span>;</span>
+        <span class="hljs-attribute">overflow</span><span class="hljs-value">: auto;</span>
+        <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">100</span>%;</span>
+
+        &gt; <span class="hljs-tag">div</span><span class="hljs-class">.waiting-list</span> {
+          <span class="hljs-class">.make-md-column</span>(12);
+        }
+
+        &gt; <span class="hljs-tag">div</span> {
+          <span class="hljs-class">.make-md-column</span>(4);
+          <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">100</span>%;</span>
+
+          &amp;<span class="hljs-class">.highlight</span> {
+            <span class="hljs-class">.target</span> {
+              <span class="hljs-attribute">opacity</span><span class="hljs-value">: <span class="hljs-number">1.0</span>;</span>
+              <span class="hljs-attribute">border-style</span><span class="hljs-value">: solid;</span>
+            }
+          }
+
+          <span class="hljs-class">.target</span> {
+            <span class="hljs-attribute">min-height</span><span class="hljs-value">: <span class="hljs-number">100</span>px;</span>
+            <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">100</span>%;</span>
+            <span class="hljs-attribute">opacity</span><span class="hljs-value">: <span class="hljs-number">0.33</span>;</span>
+            <span class="hljs-attribute">border-radius</span><span class="hljs-value">: <span class="hljs-number">5</span>px;</span>
+            <span class="hljs-attribute">border</span>-size<span class="hljs-value">: <span class="hljs-number">3</span>px;</span>
+            <span class="hljs-attribute">border-style</span><span class="hljs-value">: dashed;</span>
+            <span class="hljs-attribute">background-position</span><span class="hljs-value">: center center;</span>
+            <span class="hljs-attribute">background-repeat</span><span class="hljs-value">: no-repeat;</span>
+          }
+
+          &amp;<span class="hljs-class">.tank</span> {
+            <span class="hljs-class">.target</span> {
+              <span class="hljs-attribute">border-color</span><span class="hljs-value">: @tank;</span>
+              <span class="hljs-attribute">background-image</span><span class="hljs-value">: url(<span class="hljs-string">'../images/tank.png'</span>);</span>
+            }
+          }
+          &amp;<span class="hljs-class">.healing</span> {
+            <span class="hljs-class">.target</span> {
+              <span class="hljs-attribute">border-color</span><span class="hljs-value">: @healing;</span>
+              <span class="hljs-attribute">background-image</span><span class="hljs-value">: url(<span class="hljs-string">'../images/healing.png'</span>);</span>
+            }
+          }
+          &amp;<span class="hljs-class">.dps</span> {
+            <span class="hljs-class">.target</span> {
+              <span class="hljs-attribute">border-color</span><span class="hljs-value">: @dps;</span>
+              <span class="hljs-attribute">background-image</span><span class="hljs-value">: url(<span class="hljs-string">'../images/dps.png'</span>);</span>
+            }
+          }
+        }
+      }
     }
 
     <span class="hljs-class">.wrapper</span> {
@@ -241,14 +332,13 @@ svg {
           <span class="hljs-attribute">padding</span><span class="hljs-value">: <span class="hljs-number">5</span>px <span class="hljs-number">10</span>px;</span>
           <span class="hljs-attribute">margin-bottom</span><span class="hljs-value">: <span class="hljs-number">5</span>px;</span>
           <span class="hljs-attribute">background-color</span><span class="hljs-value">: @gray-darker;</span>
+          <span class="hljs-attribute">cursor</span><span class="hljs-value">: move;</span>
 
           <span class="hljs-tag">small</span> {
             <span class="hljs-attribute">color</span><span class="hljs-value">: @gray;</span>
           }
 
           &amp;<span class="hljs-attr_selector">[title]</span><span class="hljs-pseudo">:not</span>(<span class="hljs-attr_selector">[title=""]</span>) {
-            <span class="hljs-attribute">cursor</span><span class="hljs-value">: help;</span>
-
             <span class="hljs-class">.class</span> {
               <span class="hljs-attribute">border-bottom</span><span class="hljs-value">: <span class="hljs-number">1</span>px dotted gray;</span>
             }

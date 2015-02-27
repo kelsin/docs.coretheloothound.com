@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="en"><head><title>components/raid-group</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="components/raid-group"><meta name="groc-project-path" content="app/components/raid-group.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/components/raid-group.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;
+
+export <span class="hljs-keyword">default</span> Ember.Component.extend({
+  classNames: [<span class="hljs-string">'draggableDropzone'</span>, <span class="hljs-string">'group'</span>],
+  classNameBindings: [<span class="hljs-string">'dragClass'</span>],
+  dragClass: <span class="hljs-string">''</span>,
+
+  dragStart: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> {</span>
+    alert(<span class="hljs-string">'Dragging started'</span>);
+    event.preventDefault();
+    <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'dragClass'</span>, <span class="hljs-string">'dragging'</span>);
+  },
+
+  dragOver: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> {</span>
+    alert(<span class="hljs-string">'Dragging Over'</span>);
+    event.preventDefault();
+    <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'dragClass'</span>, <span class="hljs-string">''</span>);
+  }
+});</div></div></div></div></body></html>
