@@ -527,7 +527,30 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "title": "raid"
           },
           "depth": 2,
-          "outline": []
+          "outline": [],
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/controllers/raid/index.js",
+                "projectPath": "app/controllers/raid/index.js",
+                "targetPath": "controllers/raid/index",
+                "pageTitle": "controllers/raid/index",
+                "title": "index"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
         }, {
           "type": "folder",
           "data": {
@@ -1106,7 +1129,30 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "title": "raid"
           },
           "depth": 2,
-          "outline": []
+          "outline": [],
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/routes/raid/index.js",
+                "projectPath": "app/routes/raid/index.js",
+                "targetPath": "routes/raid/index",
+                "pageTitle": "routes/raid/index",
+                "title": "index"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
         }, {
           "type": "folder",
           "data": {
@@ -1615,7 +1661,52 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "title": "raid"
           },
           "depth": 2,
-          "outline": []
+          "outline": [],
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/raid/edit.hbs",
+                "projectPath": "app/templates/raid/edit.hbs",
+                "targetPath": "templates/raid/edit",
+                "pageTitle": "templates/raid/edit",
+                "title": "edit"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/raid/index.hbs",
+                "projectPath": "app/templates/raid/index.hbs",
+                "targetPath": "templates/raid/index",
+                "pageTitle": "templates/raid/index",
+                "title": "index"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
         }, {
           "type": "file",
           "data": {
