@@ -1587,11 +1587,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "Handlebars"
             },
-            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/loading.hbs",
-            "projectPath": "app/templates/loading.hbs",
-            "targetPath": "templates/loading",
-            "pageTitle": "templates/loading",
-            "title": "loading"
+            "sourcePath": "/Users/kelsin/src/coretheloothound/app/templates/index.hbs",
+            "projectPath": "app/templates/index.hbs",
+            "targetPath": "templates/index",
+            "pageTitle": "templates/index",
+            "title": "index"
           },
           "depth": 2,
           "outline": []
@@ -1705,6 +1705,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "outline": []
         }
       ]
+    }, {
+      "type": "file",
+      "data": {
+        "language": {
+          "nameMatchers": [".js"],
+          "pygmentsLexer": "javascript",
+          "multiLineComment": ["/*", "*", "*/"],
+          "singleLineComment": ["//"],
+          "ignorePrefix": "}",
+          "foldPrefix": "^",
+          "name": "JavaScript"
+        },
+        "sourcePath": "/Users/kelsin/src/coretheloothound/app/transitions.js",
+        "projectPath": "app/transitions.js",
+        "targetPath": "transitions",
+        "pageTitle": "transitions",
+        "title": "transitions"
+      },
+      "depth": 1,
+      "outline": []
     }, {
       "type": "folder",
       "data": {
