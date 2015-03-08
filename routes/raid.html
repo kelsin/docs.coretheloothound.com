@@ -33,6 +33,14 @@
       raid.save();
     },
 
+    <span class="hljs-keyword">delete</span>: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+      <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
+      <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
+      raid.destroyRecord().then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        _this.transitionTo(<span class="hljs-string">'raids.index'</span>);
+      });
+    },
+
     seat: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup, role)</span> {</span>
       signup.set(<span class="hljs-string">'seated'</span>, <span class="hljs-literal">true</span>);
       signup.set(<span class="hljs-string">'role'</span>, role);

@@ -16,23 +16,14 @@ export <span class="hljs-keyword">default</span> Ember.Route.extend({
             Authorization: <span class="hljs-string">'apikey '</span> + apikey
           },
           success: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> {</span>
-            _this.store.push(<span class="hljs-string">'account'</span>, data.account);
+            <span class="hljs-keyword">delete</span> data.permissions;
+            _this.store.pushPayload(<span class="hljs-string">'account'</span>, data);
 
-            Ember.$.each(data.characters, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(index, character)</span> {</span>
-              _this.store.push(<span class="hljs-string">'character'</span>, character);
-            });
-
-            Ember.$.each(data.guilds, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(index, guild)</span> {</span>
-              _this.store.push(<span class="hljs-string">'guild'</span>, guild);
-            });
-
-            Ember.$.each(data.roles, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(index, role)</span> {</span>
-              _this.store.push(<span class="hljs-string">'role'</span>, role);
-            });
-
-            resolve({
-              apikey: apikey,
-              account: data.account
+            _this.store.find(<span class="hljs-string">'account'</span>, data.account.id).then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(account)</span> {</span>
+              resolve({
+                apikey: apikey,
+                account: account
+              });
             });
           },
           error: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Bad API key</p></div></div><div class="code"><div class="wrapper">            resolve({

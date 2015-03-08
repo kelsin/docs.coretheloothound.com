@@ -13,9 +13,7 @@
   realms: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'realm'</span>, window.localStorage.getItem(<span class="hljs-string">'coretheloothound_realm'</span>) || <span class="hljs-string">'All'</span>);
 
-    <span class="hljs-keyword">return</span> [<span class="hljs-string">'All'</span>].concat(_.uniq(_.map(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'model'</span>).toArray(), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(character)</span> {</span>
-      <span class="hljs-keyword">return</span> character.get(<span class="hljs-string">'realm'</span>);
-    })).sort());
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">'All'</span>].concat(_.uniq(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'model'</span>).mapBy(<span class="hljs-string">'realm'</span>)).sort());
   }.property(<span class="hljs-string">'model.@each.realm'</span>),
 
   sortProperties: [<span class="hljs-string">'level:desc'</span>, <span class="hljs-string">'name'</span>],
