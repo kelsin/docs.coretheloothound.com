@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><title>controllers/raid</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="controllers/raid"><meta name="groc-project-path" content="app/controllers/raid.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/controllers/raid.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;
 import CharacterController from <span class="hljs-string">'./character'</span>;
 
-export <span class="hljs-keyword">default</span> Ember.ObjectController.extend({
+export <span class="hljs-keyword">default</span> Ember.Controller.extend({
   needs: [<span class="hljs-string">'application'</span>, <span class="hljs-string">'raids/index'</span>],
   currentAccount: Ember.computed.alias(<span class="hljs-string">'controllers.application.account'</span>),
   roles: Ember.computed.alias(<span class="hljs-string">'controllers.raids/index.roles'</span>),
@@ -22,19 +22,19 @@ export <span class="hljs-keyword">default</span> Ember.ObjectController.extend({
 
   currentAccountSeated: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> accountId = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'currentAccount.id'</span>).toString();
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'seated'</span>).findBy(<span class="hljs-string">'character.account.id'</span>, accountId);
-  }.property(<span class="hljs-string">'seated.@each.character'</span>, <span class="hljs-string">'currentAccount.id'</span>),
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'model.seated'</span>).findBy(<span class="hljs-string">'character.account.id'</span>, accountId);
+  }.property(<span class="hljs-string">'model.seated.@each.character'</span>, <span class="hljs-string">'currentAccount.id'</span>),
 
   currentAccountSignedUp: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> accountId = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'currentAccount.id'</span>).toString();
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signups'</span>).filterBy(<span class="hljs-string">'character.account.id'</span>, accountId);
-  }.property(<span class="hljs-string">'signups.@each.character'</span>, <span class="hljs-string">'currentAccount.id'</span>),
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'model.signups'</span>).filterBy(<span class="hljs-string">'character.account.id'</span>, accountId);
+  }.property(<span class="hljs-string">'model.signups.@each.character'</span>, <span class="hljs-string">'currentAccount.id'</span>),
 
   characters: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> ids = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signedUpCharacterIds'</span>);
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'currentAccount.characters'</span>)
       .filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(character)</span> {</span>
-        <span class="hljs-keyword">return</span> !ids.contains(character.get(<span class="hljs-string">'id'</span>));
+        <span class="hljs-keyword">return</span> !ids.contains(character.get(<span class="hljs-string">'model.id'</span>));
       })
       .map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(character)</span> {</span>
         <span class="hljs-keyword">return</span> CharacterController.create({
@@ -42,11 +42,11 @@ export <span class="hljs-keyword">default</span> Ember.ObjectController.extend({
         });
       })
       .sort(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a,b)</span> {</span>
-        <span class="hljs-keyword">var</span> diff = b.get(<span class="hljs-string">'level'</span>) - a.get(<span class="hljs-string">'level'</span>);
+        <span class="hljs-keyword">var</span> diff = b.get(<span class="hljs-string">'model.level'</span>) - a.get(<span class="hljs-string">'model.level'</span>);
         <span class="hljs-keyword">if</span>(diff) {
           <span class="hljs-keyword">return</span> diff;
         } <span class="hljs-keyword">else</span> {
-          <span class="hljs-keyword">return</span> a.get(<span class="hljs-string">'name'</span>).localeCompare(b.get(<span class="hljs-string">'name'</span>));
+          <span class="hljs-keyword">return</span> a.get(<span class="hljs-string">'model.name'</span>).localeCompare(b.get(<span class="hljs-string">'model.name'</span>));
         }
       });
   }.property(<span class="hljs-string">'currentAccount.characters'</span>, <span class="hljs-string">'signedUpCharacterIds'</span>)

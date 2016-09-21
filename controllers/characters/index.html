@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><title>controllers/characters/index</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="controllers/characters/index"><meta name="groc-project-path" content="app/controllers/characters/index.js"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/controllers/characters/index.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>global _ </p></div></div><div class="code"><div class="wrapper">export <span class="hljs-keyword">default</span> Ember.Controller.extend({
+<!DOCTYPE html><html lang="en"><head><title>controllers/characters/index</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="controllers/characters/index"><meta name="groc-project-path" content="app/controllers/characters/index.js"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/controllers/characters/index.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;
+import ENV from <span class="hljs-string">'coretheloothound/config/environment'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>global _ </p></div></div><div class="code"><div class="wrapper">export <span class="hljs-keyword">default</span> Ember.Controller.extend({
   realm: <span class="hljs-string">'All'</span>,
   onlyMax: <span class="hljs-literal">true</span>,
 
@@ -24,7 +25,7 @@
     <span class="hljs-keyword">var</span> onlyMax = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'onlyMax'</span>);
 
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'sorted'</span>).filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(character)</span> {</span>
-      <span class="hljs-keyword">if</span>(onlyMax &amp;&amp; character.get(<span class="hljs-string">'level'</span>) &lt; <span class="hljs-number">100</span>) {
+      <span class="hljs-keyword">if</span>(onlyMax &amp;&amp; character.get(<span class="hljs-string">'level'</span>) &lt; ENV.maxLevel) {
         <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
       }
 
