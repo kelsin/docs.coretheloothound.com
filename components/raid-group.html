@@ -5,13 +5,13 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
   classNameBindings: [<span class="hljs-string">'dragClass'</span>],
   dragClass: <span class="hljs-string">''</span>,
 
-  dragStart: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> {</span>
+  dragStart(event) {
     alert(<span class="hljs-string">'Dragging started'</span>);
     event.preventDefault();
     <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'dragClass'</span>, <span class="hljs-string">'dragging'</span>);
   },
 
-  dragOver: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> {</span>
+  dragOver(event) {
     alert(<span class="hljs-string">'Dragging Over'</span>);
     event.preventDefault();
     <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'dragClass'</span>, <span class="hljs-string">''</span>);

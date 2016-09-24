@@ -4,44 +4,49 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
   classNames: <span class="hljs-string">'signup'</span>,
 
   rolesSorting: [<span class="hljs-string">'slug:desc'</span>],
-  sortedRoles: Ember.computed.sort(<span class="hljs-string">'signup.model.roles'</span>, <span class="hljs-string">'rolesSorting'</span>),
+  sortedRoles: Ember.computed.sort(<span class="hljs-string">'signup.roles'</span>, <span class="hljs-string">'rolesSorting'</span>),
 
   attributeBindings: [<span class="hljs-string">'draggable:draggable'</span>, <span class="hljs-string">'note:title'</span>],
   draggable: <span class="hljs-literal">true</span>,
 
-  note: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.model.note'</span>);
-  }.property(<span class="hljs-string">'signup.model.note'</span>),
+  note: Ember.computed(<span class="hljs-string">'signup.note'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.note'</span>);
+  }),
 
-  classes: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">var</span> classes = <span class="hljs-string">'class class-'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.model.character.class_id'</span>);
+  classes: Ember.computed(<span class="hljs-string">'signup.character.class_id'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> classes = <span class="hljs-string">'class class-'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.character.class_id'</span>);
     <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'preferred'</span>)) {
       classes += <span class="hljs-string">' preferred'</span>;
     }
     <span class="hljs-keyword">return</span> classes;
-  }.property(<span class="hljs-string">'signup.model.character.class_id'</span>),
+  }),
 
-  iconClasses: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  iconClasses: Ember.computed(<span class="hljs-string">'signup.role.slug'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-string">'role '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.role.slug'</span>);
-  }.property(<span class="hljs-string">'signup.role.slug'</span>),
+  }),
 
-  mine: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  mine: Ember.computed(<span class="hljs-string">'currentAccount.id'</span>, <span class="hljs-string">'signup.character.account.id'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'currentAccount.id'</span>) === <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.character.account.id'</span>);
-  }.property(<span class="hljs-string">'currentAccount.id'</span>, <span class="hljs-string">'signup.character.account.id'</span>),
+  }),
+
+  canBeSeated: Ember.computed(<span class="hljs-string">'signup.raid.waitingList.[]'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> waitingList = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.raid.waitingList'</span>);
+    <span class="hljs-keyword">return</span> waitingList.mapBy(<span class="hljs-string">'id'</span>).includes(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.id'</span>));
+  }),
 
   actions: {
-    unsignup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    unsignup() {
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">"unsignup"</span>,
-                      <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.content'</span>));
+                      <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup'</span>));
     },
-    seat: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role)</span> {</span>
+    seat(role) {
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">"seat"</span>,
-                      <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.content'</span>),
+                      <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup'</span>),
                       role);
     },
-    unseat: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    unseat() {
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">"unseat"</span>,
-                      <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup.content'</span>));
+                      <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup'</span>));
     }
   }
 });</div></div></div></div></body></html>

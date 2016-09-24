@@ -280,11 +280,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/donut-graph.js",
-            "projectPath": "app/components/donut-graph.js",
-            "targetPath": "components/donut-graph",
-            "pageTitle": "components/donut-graph",
-            "title": "donut-graph"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/guild-icon.js",
+            "projectPath": "app/components/guild-icon.js",
+            "targetPath": "components/guild-icon",
+            "pageTitle": "components/guild-icon",
+            "title": "guild-icon"
           },
           "depth": 2,
           "outline": []
@@ -380,6 +380,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/raid-row.js",
+            "projectPath": "app/components/raid-row.js",
+            "targetPath": "components/raid-row",
+            "pageTitle": "components/raid-row",
+            "title": "raid-row"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/raid-signup.js",
             "projectPath": "app/components/raid-signup.js",
             "targetPath": "components/raid-signup",
@@ -455,26 +475,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "targetPath": "controllers/auth",
             "pageTitle": "controllers/auth",
             "title": "auth"
-          },
-          "depth": 2,
-          "outline": []
-        }, {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/character.js",
-            "projectPath": "app/controllers/character.js",
-            "targetPath": "controllers/character",
-            "pageTitle": "controllers/character",
-            "title": "character"
           },
           "depth": 2,
           "outline": []
@@ -621,26 +621,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           },
           "depth": 2,
           "outline": []
-        }, {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/signup.js",
-            "projectPath": "app/controllers/signup.js",
-            "targetPath": "controllers/signup",
-            "pageTitle": "controllers/signup",
-            "title": "signup"
-          },
-          "depth": 2,
-          "outline": []
         }
       ]
     }, {
@@ -733,11 +713,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/initializers/link-view.js",
-            "projectPath": "app/initializers/link-view.js",
-            "targetPath": "initializers/link-view",
-            "pageTitle": "initializers/link-view",
-            "title": "link-view"
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/initializers/link-component.js",
+            "projectPath": "app/initializers/link-component.js",
+            "targetPath": "initializers/link-component",
+            "pageTitle": "initializers/link-component",
+            "title": "link-component"
           },
           "depth": 2,
           "outline": []
@@ -758,36 +738,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "targetPath": "initializers/storage",
             "pageTitle": "initializers/storage",
             "title": "storage"
-          },
-          "depth": 2,
-          "outline": []
-        }
-      ]
-    }, {
-      "type": "folder",
-      "data": {
-        "path": "mixins",
-        "title": "mixins"
-      },
-      "depth": 1,
-      "children": [
-        {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/mixins/after-render.js",
-            "projectPath": "app/mixins/after-render.js",
-            "targetPath": "mixins/after-render",
-            "pageTitle": "mixins/after-render",
-            "title": "after-render"
           },
           "depth": 2,
           "outline": []
@@ -1024,6 +974,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "foldPrefix": "^",
           "name": "JavaScript"
         },
+        "sourcePath": "/Users/cgiroir/src/coretheloothound/app/resolver.js",
+        "projectPath": "app/resolver.js",
+        "targetPath": "resolver",
+        "pageTitle": "resolver",
+        "title": "resolver"
+      },
+      "depth": 1,
+      "outline": []
+    }, {
+      "type": "file",
+      "data": {
+        "language": {
+          "nameMatchers": [".js"],
+          "pygmentsLexer": "javascript",
+          "multiLineComment": ["/*", "*", "*/"],
+          "singleLineComment": ["//"],
+          "ignorePrefix": "}",
+          "foldPrefix": "^",
+          "name": "JavaScript"
+        },
         "sourcePath": "/Users/cgiroir/src/coretheloothound/app/router.js",
         "projectPath": "app/router.js",
         "targetPath": "router",
@@ -1194,6 +1164,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
       "depth": 1,
       "children": [
         {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/serializers/application.js",
+            "projectPath": "app/serializers/application.js",
+            "targetPath": "serializers/application",
+            "pageTitle": "serializers/application",
+            "title": "application"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
           "type": "file",
           "data": {
             "language": {
@@ -1505,11 +1495,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/components/donut-graph.hbs",
-                "projectPath": "app/templates/components/donut-graph.hbs",
-                "targetPath": "templates/components/donut-graph",
-                "pageTitle": "templates/components/donut-graph",
-                "title": "donut-graph"
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/components/guild-icon.hbs",
+                "projectPath": "app/templates/components/guild-icon.hbs",
+                "targetPath": "templates/components/guild-icon",
+                "pageTitle": "templates/components/guild-icon",
+                "title": "guild-icon"
               },
               "depth": 3,
               "outline": []
@@ -1594,6 +1584,27 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                 "targetPath": "templates/components/raid-permissions",
                 "pageTitle": "templates/components/raid-permissions",
                 "title": "raid-permissions"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/components/raid-row.hbs",
+                "projectPath": "app/templates/components/raid-row.hbs",
+                "targetPath": "templates/components/raid-row",
+                "pageTitle": "templates/components/raid-row",
+                "title": "raid-row"
               },
               "depth": 3,
               "outline": []
@@ -1773,27 +1784,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "outline": []
             }
           ]
-        }, {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".handlebars", ".hbs"],
-              "pygmentsLexer": "html",
-              "highlightJS": "handlebars",
-              "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
-              "strictMultiLineEnd": true,
-              "ignorePrefix": "#",
-              "foldPrefix": "^",
-              "name": "Handlebars"
-            },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/user.hbs",
-            "projectPath": "app/templates/user.hbs",
-            "targetPath": "templates/user",
-            "pageTitle": "templates/user",
-            "title": "user"
-          },
-          "depth": 2,
-          "outline": []
         }
       ]
     }, {
@@ -1816,46 +1806,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
       },
       "depth": 1,
       "outline": []
-    }, {
-      "type": "folder",
-      "data": {
-        "path": "views",
-        "title": "views"
-      },
-      "depth": 1,
-      "children": [
-        {
-          "type": "folder",
-          "data": {
-            "path": "views/raids",
-            "title": "raids"
-          },
-          "depth": 2,
-          "children": [
-            {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/views/raids/index.js",
-                "projectPath": "app/views/raids/index.js",
-                "targetPath": "views/raids/index",
-                "pageTitle": "views/raids/index",
-                "title": "index"
-              },
-              "depth": 3,
-              "outline": []
-            }
-          ]
-        }
-      ]
     }
   ];
 

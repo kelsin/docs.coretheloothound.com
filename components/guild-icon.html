@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="en"><head><title>components/guild-icon</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="components/guild-icon"><meta name="groc-project-path" content="app/components/guild-icon.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/components/guild-icon.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;
+
+export <span class="hljs-keyword">default</span> Ember.Component.extend({
+  backgroundStyle: Ember.computed(<span class="hljs-string">'guild.backgroundHexColor'</span>, <span class="hljs-string">'guild.borderHexColor'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> Ember.String.htmlSafe(<span class="hljs-string">'background-color: '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guild.backgroundHexColor'</span>) + <span class="hljs-string">'; border-color: '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guild.borderHexColor'</span>) + <span class="hljs-string">';'</span>);
+  }),
+
+  iconStyle: Ember.computed(<span class="hljs-string">'guild.iconHexColor'</span>, <span class="hljs-string">'guild.iconPadded'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> Ember.String.htmlSafe(<span class="hljs-string">'background-color: '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guild.iconHexColor'</span>) + <span class="hljs-string">"; -webkit-mask-box-image: url('https://us.battle.net/wow/static/images/guild/tabards/emblem_"</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guild.iconPadded'</span>) + <span class="hljs-string">".png');"</span>);
+  })
+});</div></div></div></div></body></html>

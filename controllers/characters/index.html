@@ -3,24 +3,26 @@ import ENV from <span class="hljs-string">'coretheloothound/config/environment'<
   realm: <span class="hljs-string">'All'</span>,
   onlyMax: <span class="hljs-literal">true</span>,
 
-  updateRealm: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  init() {
+    <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'realm'</span>, window.localStorage.getItem(<span class="hljs-string">'coretheloothound_realm'</span>) || <span class="hljs-string">'All'</span>);
+  },
+
+  updateRealm: Ember.observer(<span class="hljs-string">'realm'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> realm = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'realm'</span>);
 
     <span class="hljs-keyword">if</span> (realm) {
       window.localStorage.setItem(<span class="hljs-string">'coretheloothound_realm'</span>, realm);
     }
-  }.observes(<span class="hljs-string">'realm'</span>),
+  }),
 
-  realms: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'realm'</span>, window.localStorage.getItem(<span class="hljs-string">'coretheloothound_realm'</span>) || <span class="hljs-string">'All'</span>);
-
+  realms: Ember.computed(<span class="hljs-string">'model.[].realm'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> [<span class="hljs-string">'All'</span>].concat(_.uniq(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'model'</span>).mapBy(<span class="hljs-string">'realm'</span>)).sort());
-  }.property(<span class="hljs-string">'model.@each.realm'</span>),
+  }),
 
-  sortProperties: [<span class="hljs-string">'level:desc'</span>, <span class="hljs-string">'name'</span>],
-  sorted: Ember.computed.sort(<span class="hljs-string">'model'</span>, <span class="hljs-string">'sortProperties'</span>),
+  characterSorting: [<span class="hljs-string">'level:desc'</span>, <span class="hljs-string">'name'</span>],
+  sorted: Ember.computed.sort(<span class="hljs-string">'model'</span>, <span class="hljs-string">'characterSorting'</span>),
 
-  filtered: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  filtered: Ember.computed(<span class="hljs-string">'sorted'</span>, <span class="hljs-string">'onlyMax'</span>, <span class="hljs-string">'realm'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> realm = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'realm'</span>);
     <span class="hljs-keyword">var</span> onlyMax = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'onlyMax'</span>);
 
@@ -35,5 +37,11 @@ import ENV from <span class="hljs-string">'coretheloothound/config/environment'<
         <span class="hljs-keyword">return</span> realm === character.get(<span class="hljs-string">'realm'</span>);
       }
     });
-  }.property(<span class="hljs-string">'sorted'</span>, <span class="hljs-string">'onlyMax'</span>, <span class="hljs-string">'realm'</span>)
+  }),
+
+  actions: {
+    changeRealm(realm) {
+      <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'realm'</span>, realm);
+    }
+  }
 });</div></div></div></div></body></html>

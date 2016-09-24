@@ -1,16 +1,16 @@
 <!DOCTYPE html><html lang="en"><head><title>app</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="app"><meta name="groc-project-path" content="app/app.js"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/app.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;
-import Resolver from <span class="hljs-string">'ember/resolver'</span>;
-import loadInitializers from <span class="hljs-string">'ember/load-initializers'</span>;
+import Resolver from <span class="hljs-string">'./resolver'</span>;
+import loadInitializers from <span class="hljs-string">'ember-load-initializers'</span>;
 import config from <span class="hljs-string">'./config/environment'</span>;
 
-<span class="hljs-keyword">var</span> App;
+<span class="hljs-keyword">let</span> App;
 
 Ember.MODEL_FACTORY_INJECTIONS = <span class="hljs-literal">true</span>;
 
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
-  Resolver: Resolver
+  Resolver
 });
 
 loadInitializers(App, config.modulePrefix);

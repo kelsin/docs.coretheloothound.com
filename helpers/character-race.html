@@ -44,7 +44,7 @@ export <span class="hljs-function"><span class="hljs-keyword">function</span> <s
     <span class="hljs-number">26</span>: <span class="hljs-string">'Pandaren'</span>
   };
 
-  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Ember.Handlebars.SafeString(<span class="hljs-string">'&lt;span class="'</span> + faction(race_id) + <span class="hljs-string">'"&gt;'</span> + races[race_id] + <span class="hljs-string">'&lt;/span&gt;'</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Ember.String.htmlSafe(<span class="hljs-string">'&lt;span class="'</span> + faction(race_id) + <span class="hljs-string">'"&gt;'</span> + races[race_id] + <span class="hljs-string">'&lt;/span&gt;'</span>);
 }
 
-export <span class="hljs-keyword">default</span> Ember.Handlebars.makeBoundHelper(characterRace);</div></div></div></div></body></html>
+export <span class="hljs-keyword">default</span> Ember.Helper.helper(characterRace);</div></div></div></div></body></html>

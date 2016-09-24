@@ -5,31 +5,31 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
   memberPermissions: Ember.computed.filterBy(<span class="hljs-string">'raid.permissions'</span>, <span class="hljs-string">'level'</span>, <span class="hljs-string">'member'</span>),
 
   actions: {
-    newAdminPermission: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    newAdminPermission() {
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">'newPermission'</span>,
                       <span class="hljs-string">'admin'</span>,
                       <span class="hljs-string">'Account|'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'adminAccount'</span>));
     },
 
-    newMemberAccountPermission: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    newMemberAccountPermission() {
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">'newPermission'</span>,
                       <span class="hljs-string">'member'</span>,
                       <span class="hljs-string">'Account|'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'memberAccount'</span>));
     },
 
-    newMemberCharacterPermission: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    newMemberCharacterPermission() {
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">'newPermission'</span>,
                       <span class="hljs-string">'member'</span>,
                       <span class="hljs-string">'Character|'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'characterName'</span>) + <span class="hljs-string">':'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'characterRealm'</span>));
     },
 
-    newMemberGuildPermission: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    newMemberGuildPermission() {
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">'newPermission'</span>,
                       <span class="hljs-string">'member'</span>,
                       <span class="hljs-string">'Guild|'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guildName'</span>) + <span class="hljs-string">':'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guildRealm'</span>));
     },
 
-    deletePermission: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(permission)</span> {</span>
+    deletePermission(permission) {
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">'deletePermission'</span>,
                       permission);
     }

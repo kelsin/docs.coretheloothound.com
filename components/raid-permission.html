@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><title>components/raid-permission</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="components/raid-permission"><meta name="groc-project-path" content="app/components/raid-permission.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/components/raid-permission.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;
 
 export <span class="hljs-keyword">default</span> Ember.Component.extend({
-  label: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  label: Ember.computed(<span class="hljs-string">'permission.type'</span>, <span class="hljs-string">'permission.args'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> type = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permission.type'</span>);
     <span class="hljs-keyword">switch</span> (type) {
     <span class="hljs-keyword">case</span> <span class="hljs-string">'Guild'</span>:
@@ -10,14 +10,14 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
     <span class="hljs-keyword">default</span>:
       <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permission.args'</span>);
     }
-  }.property(<span class="hljs-string">'permission.type'</span>, <span class="hljs-string">'permission.args'</span>),
+  }),
 
-  ownAccount: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  ownAccount: Ember.computed(<span class="hljs-string">'permission.key'</span>, <span class="hljs-string">'account.battletag'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permission.key'</span>) === (<span class="hljs-string">'Account|'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'account.battletag'</span>));
-  }.property(<span class="hljs-string">'permission.key'</span>, <span class="hljs-string">'account.battletag'</span>),
+  }),
 
   actions: {
-    deletePermission: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    deletePermission() {
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">'deletePermission'</span>,
                       <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permission'</span>));
     }

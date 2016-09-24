@@ -4,15 +4,16 @@
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-md-12"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-group"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"character"</span>&gt;</span>Character<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-        </span><span class="hljs-expression">{{<span class="hljs-variable"><span class="hljs-keyword">view</span></span> <span class="hljs-string">"select"</span> <span class="hljs-variable">id</span>=<span class="hljs-string">"character"</span>
-                        <span class="hljs-variable">class</span>=<span class="hljs-string">"form-control"</span>
-                        <span class="hljs-variable">content</span>=<span class="hljs-variable">characters</span>
-                        <span class="hljs-variable">selection</span>=<span class="hljs-variable">character</span>
-                        <span class="hljs-variable">optionValuePath</span>=<span class="hljs-string">"content.model.id"</span>
-                        <span class="hljs-variable">optionLabelPath</span>=<span class="hljs-string">"content.label"</span>}}</span><span class="xml">
+        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"character"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-control"</span> <span class="hljs-attribute">onchange</span>=</span></span><span class="hljs-expression">{{<span class="hljs-variable"><span class="hljs-keyword">action</span></span> <span class="hljs-string">"change"</span>}}</span><span class="xml"><span class="hljs-tag">&gt;</span>
+          </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">each</span> characters as </span>|<span class="hljs-variable">item</span>|}}</span><span class="xml">
+          <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"</span></span></span><span class="hljs-expression">{{<span class="hljs-variable">item.model.id</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span> <span class="hljs-attribute">selected</span>=</span></span><span class="hljs-expression">{{<span class="hljs-variable">eq</span> <span class="hljs-variable">character</span> <span class="hljs-variable">item</span>}}</span><span class="xml"><span class="hljs-tag">&gt;</span>
+            </span><span class="hljs-expression">{{<span class="hljs-variable">item.label</span>}}</span><span class="xml">
+          <span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+          </span><span class="hljs-expression">{{<span class="hljs-end-block">/<span class="hljs-keyword">each</span></span>}}</span><span class="xml">
+        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
         </span><span class="hljs-expression">{{<span class="hljs-variable">input</span> <span class="hljs-variable">class</span>=<span class="hljs-string">"form-control"</span> <span class="hljs-variable">placeholder</span>=<span class="hljs-string">"Note"</span> <span class="hljs-variable">value</span>=<span class="hljs-variable">note</span>}}</span><span class="xml">
 
-        </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">each</span> box <span class="hljs-keyword">in</span> roleCheckboxes</span>}}</span><span class="xml">
+        </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">each</span> roleCheckboxes as </span>|<span class="hljs-variable">box</span>|}}</span><span class="xml">
           <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
               </span><span class="hljs-expression">{{<span class="hljs-variable">input</span> <span class="hljs-variable">id</span>=<span class="hljs-variable">slug</span> <span class="hljs-variable">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-variable">checked</span>=<span class="hljs-variable">box.checked</span> <span class="hljs-variable">name</span>=<span class="hljs-variable">box.name</span>}}</span><span class="xml">

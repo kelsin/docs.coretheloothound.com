@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="en"><head><title>components/raid-row</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="components/raid-row"><meta name="groc-project-path" content="app/components/raid-row.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/components/raid-row.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;
+
+export <span class="hljs-keyword">default</span> Ember.Component.extend({
+  tagName: <span class="hljs-string">"tr"</span>,
+
+  accountSeated: Ember.computed(<span class="hljs-string">'raid.seated.[].character'</span>, <span class="hljs-string">'account.id'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> accountId = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'account.id'</span>).toString();
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'raid.seated'</span>).findBy(<span class="hljs-string">'character.account.id'</span>, accountId);
+  }),
+
+  accountSignedUp: Ember.computed(<span class="hljs-string">'raid.signups.[].character'</span>, <span class="hljs-string">'account.id'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> accountId = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'account.id'</span>).toString();
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'raid.signups'</span>).filterBy(<span class="hljs-string">'character.account.id'</span>, accountId);
+  })
+});</div></div></div></div></body></html>

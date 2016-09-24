@@ -6,44 +6,38 @@ import DS from <span class="hljs-string">'ember-data'</span>;</div></div></div><
   icon: DS.attr(<span class="hljs-string">'number'</span>),
   border: DS.attr(<span class="hljs-string">'number'</span>),
 
-  iconPadded: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  iconPadded: Ember.computed(<span class="hljs-string">'icon'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">var</span> icon = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'icon'</span>);
     <span class="hljs-keyword">return</span> _.pad(icon, <span class="hljs-number">2</span>, <span class="hljs-string">'0'</span>);
-  }.property(<span class="hljs-string">'icon'</span>),
+  }),
 
   iconColor: DS.attr(<span class="hljs-string">'string'</span>),
   borderColor: DS.attr(<span class="hljs-string">'string'</span>),
   backgroundColor: DS.attr(<span class="hljs-string">'string'</span>),
 
-  iconHexColor: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  iconHexColor: Ember.computed(<span class="hljs-string">'iconColor'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-string">'#'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'iconColor'</span>).substring(<span class="hljs-number">2</span>,<span class="hljs-number">8</span>);
-  }.property(<span class="hljs-string">'iconColor'</span>),
+  }),
 
-  borderHexColor: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  borderHexColor: Ember.computed(<span class="hljs-string">'borderColor'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-string">'#'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'borderColor'</span>).substring(<span class="hljs-number">2</span>,<span class="hljs-number">8</span>);
-  }.property(<span class="hljs-string">'borderColor'</span>),
+  }),
 
-  backgroundHexColor: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  backgroundHexColor: Ember.computed(<span class="hljs-string">'backgroundColor'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-string">'#'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'backgroundColor'</span>).substring(<span class="hljs-number">2</span>,<span class="hljs-number">8</span>);
-  }.property(<span class="hljs-string">'backgroundColor'</span>),
+  }),
 
-  backgroundStyle: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> Ember.String.htmlSafe(<span class="hljs-string">'background-color: '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'backgroundHexColor'</span>) + <span class="hljs-string">'; border-color: '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'borderHexColor'</span>) + <span class="hljs-string">';'</span>);
-  }.property(<span class="hljs-string">'backgroundHexColor'</span>, <span class="hljs-string">'borderHexColor'</span>),
+  characters: DS.hasMany(<span class="hljs-string">'character'</span>, {
+    async: <span class="hljs-literal">false</span>
+  }),
 
-  iconStyle: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> Ember.String.htmlSafe(<span class="hljs-string">'background-color: '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'iconHexColor'</span>) + <span class="hljs-string">"; -webkit-mask-box-image: url('https://us.battle.net/wow/static/images/guild/tabards/emblem_"</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'iconPadded'</span>) + <span class="hljs-string">".png');"</span>);
-  }.property(<span class="hljs-string">'iconHexColor'</span>, <span class="hljs-string">'iconPadded'</span>),
-
-  characters: DS.hasMany(<span class="hljs-string">'character'</span>),
-
-  fullName: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  fullName: Ember.computed(<span class="hljs-string">'name'</span>, <span class="hljs-string">'realm'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'name'</span>) + <span class="hljs-string">' - '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'realm'</span>);
-  }.property(<span class="hljs-string">'name'</span>, <span class="hljs-string">'realm'</span>),
+  }),
 
-  url: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  url: Ember.computed(<span class="hljs-string">'name'</span>, <span class="hljs-string">'realm'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> <span class="hljs-string">'http://us.battle.net/wow/guild/'</span> +
       <span class="hljs-built_in">encodeURIComponent</span>(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'realm'</span>)) + <span class="hljs-string">'/'</span> +
       <span class="hljs-built_in">encodeURIComponent</span>(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'name'</span>)) + <span class="hljs-string">'/'</span>;
-  }.property(<span class="hljs-string">'name'</span>, <span class="hljs-string">'realm'</span>)
+  })
 });</div></div></div></div></body></html>

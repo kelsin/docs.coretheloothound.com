@@ -1,10 +1,18 @@
 <!DOCTYPE html><html lang="en"><head><title>models/signup</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="models/signup"><meta name="groc-project-path" content="app/models/signup.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/models/signup.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import DS from <span class="hljs-string">'ember-data'</span>;
 
 export <span class="hljs-keyword">default</span> DS.Model.extend({
-  raid: DS.belongsTo(<span class="hljs-string">'raid'</span>),
-  character: DS.belongsTo(<span class="hljs-string">'character'</span>),
-  role: DS.belongsTo(<span class="hljs-string">'role'</span>),
-  roles: DS.hasMany(<span class="hljs-string">'role'</span>),
+  raid: DS.belongsTo(<span class="hljs-string">'raid'</span>, {
+    async: <span class="hljs-literal">false</span>
+  }),
+  character: DS.belongsTo(<span class="hljs-string">'character'</span>, {
+    async: <span class="hljs-literal">false</span>
+  }),
+  role: DS.belongsTo(<span class="hljs-string">'role'</span>, {
+    async: <span class="hljs-literal">false</span>
+  }),
+  roles: DS.hasMany(<span class="hljs-string">'role'</span>, {
+    async: <span class="hljs-literal">false</span>
+  }),
   seated: DS.attr(),
   preferred: DS.attr(),
   note: DS.attr()

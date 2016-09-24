@@ -1,39 +1,39 @@
 <!DOCTYPE html><html lang="en"><head><title>routes/raid</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="routes/raid"><meta name="groc-project-path" content="app/routes/raid.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/routes/raid.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>global _ </p></div></div><div class="code"><div class="wrapper">export <span class="hljs-keyword">default</span> Ember.Route.extend({
-  model: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(params)</span> {</span>
+  model(params) {
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.store.find(<span class="hljs-string">'raid'</span>, params.raid_id);
   },
 
-  setupController: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(controller, model)</span> {</span>
+  setupController(controller, model) {
     controller.set(<span class="hljs-string">'model'</span>, model);
-    controller.set(<span class="hljs-string">'roles'</span>, <span class="hljs-keyword">this</span>.store.all(<span class="hljs-string">'role'</span>));
+    controller.set(<span class="hljs-string">'roles'</span>, <span class="hljs-keyword">this</span>.store.peekAll(<span class="hljs-string">'role'</span>));
   },
 
   actions: {
-    hide: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    hide() {
       <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
       raid.set(<span class="hljs-string">'hidden'</span>, <span class="hljs-literal">true</span>);
       raid.save();
     },
 
-    unhide: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    unhide() {
       <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
       raid.set(<span class="hljs-string">'hidden'</span>, <span class="hljs-literal">false</span>);
       raid.save();
     },
 
-    finalize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    finalize() {
       <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
       raid.set(<span class="hljs-string">'finalized'</span>, <span class="hljs-literal">true</span>);
       raid.save();
     },
 
-    unfinalize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    unfinalize() {
       <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
       raid.set(<span class="hljs-string">'finalized'</span>, <span class="hljs-literal">false</span>);
       raid.save();
     },
 
-    <span class="hljs-keyword">delete</span>: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">delete</span>() {
       <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
       <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
       <span class="hljs-keyword">if</span>(window.confirm(<span class="hljs-string">'Are you sure you want to delete "'</span> + raid.get(<span class="hljs-string">'name'</span>) + <span class="hljs-string">'"?'</span>)) {
@@ -43,29 +43,18 @@
       }
     },
 
-    seat: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup, role)</span> {</span>
-      signup.set(<span class="hljs-string">'seated'</span>, <span class="hljs-literal">true</span>);
-      signup.set(<span class="hljs-string">'role'</span>, role);
-      signup.save();
-    },
-
-    unseat: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
-      signup.set(<span class="hljs-string">'seated'</span>, <span class="hljs-literal">false</span>);
-      signup.save();
-    },
-
-    signup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(character, note, role_ids)</span> {</span>
+    signup(character, note, role_ids) {
       <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
       <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
 
       <span class="hljs-keyword">var</span> signup = <span class="hljs-keyword">this</span>.store.createRecord(<span class="hljs-string">'signup'</span>, {
-        character: character.get(<span class="hljs-string">'model'</span>),
+        character: character,
         note: note,
         raid: raid
       });
 
       Ember.RSVP.all(_.map(role_ids, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role_id)</span> {</span>
-        <span class="hljs-keyword">return</span> _this.store.find(<span class="hljs-string">'role'</span>, role_id);
+        <span class="hljs-keyword">return</span> _this.store.peekRecord(<span class="hljs-string">'role'</span>, role_id);
       })).then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(roles)</span> {</span>
         <span class="hljs-keyword">return</span> _.each(roles, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role)</span> {</span>
           signup.get(<span class="hljs-string">'roles'</span>).addObject(role);
@@ -75,11 +64,7 @@
       });
     },
 
-    unsignup: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(signup)</span> {</span>
-      signup.destroyRecord();
-    },
-
-    newPermission: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(level, key)</span> {</span>
+    newPermission(level, key) {
       <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
 
       <span class="hljs-keyword">var</span> permission = <span class="hljs-keyword">this</span>.store.createRecord(<span class="hljs-string">'permission'</span>, {
@@ -91,7 +76,7 @@
       permission.save();
     },
 
-    deletePermission: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(permission)</span> {</span>
+    deletePermission(permission) {
       permission.destroyRecord();
     }
   }

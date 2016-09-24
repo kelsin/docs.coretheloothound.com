@@ -3,6 +3,10 @@
 export <span class="hljs-keyword">default</span> DS.Model.extend({
   accountId: DS.attr(<span class="hljs-string">'string'</span>),
   battletag: DS.attr(<span class="hljs-string">'string'</span>),
-  characters: DS.hasMany(<span class="hljs-string">'character'</span>),
-  raids: DS.hasMany(<span class="hljs-string">'raid'</span>)
+  characters: DS.hasMany(<span class="hljs-string">'character'</span>, {
+    async: <span class="hljs-literal">false</span>
+  }),
+  raids: DS.hasMany(<span class="hljs-string">'raid'</span>, {
+    async: <span class="hljs-literal">false</span>
+  })
 });</div></div></div></div></body></html>

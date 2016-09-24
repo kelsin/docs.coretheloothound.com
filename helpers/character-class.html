@@ -16,7 +16,7 @@ export <span class="hljs-function"><span class="hljs-keyword">function</span> <s
     <span class="hljs-number">12</span>: <span class="hljs-string">'Demon Hunter'</span>
   };
 
-  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Ember.Handlebars.SafeString(<span class="hljs-string">'&lt;span class="class-'</span> + class_id + <span class="hljs-string">'"&gt;'</span> + classes[class_id] + <span class="hljs-string">'&lt;/span&gt;'</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Ember.String.htmlSafe(<span class="hljs-string">'&lt;span class="class-'</span> + class_id + <span class="hljs-string">'"&gt;'</span> + classes[class_id] + <span class="hljs-string">'&lt;/span&gt;'</span>);
 }
 
-export <span class="hljs-keyword">default</span> Ember.Handlebars.makeBoundHelper(characterClass);</div></div></div></div></body></html>
+export <span class="hljs-keyword">default</span> Ember.Helper.helper(characterClass);</div></div></div></div></body></html>
