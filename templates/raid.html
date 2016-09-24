@@ -9,15 +9,15 @@
   <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"alerts"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span>&gt;</span>
-      </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">if</span> currentAccountSeated</span>}}</span><span class="xml">
+      </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">if</span> accountSeated</span>}}</span><span class="xml">
         <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"alert alert-success"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"alert"</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Seated<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
-          on </span><span class="hljs-expression">{{<span class="hljs-variable">currentAccountSeated.character.name</span>}}</span><span class="xml">. See you at the raid!
+          on </span><span class="hljs-expression">{{<span class="hljs-variable">accountSeated.character.name</span>}}</span><span class="xml">. See you at the raid!
         <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
       </span><span class="hljs-expression">{{<span class="hljs-variable"><span class="hljs-keyword">else</span></span>}}</span><span class="xml">
-        </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">if</span> currentAccountSignedUp</span>}}</span><span class="xml">
+        </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">if</span> accountSignedUp</span>}}</span><span class="xml">
           <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"alert alert-info"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"alert"</span>&gt;</span>
-            You have </span><span class="hljs-expression">{{<span class="hljs-variable">currentAccountSignedUp.length</span>}}</span><span class="xml"> characters on the <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Waiting List<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>.
+            You have </span><span class="hljs-expression">{{<span class="hljs-variable">accountSignedUp.length</span>}}</span><span class="xml"> characters on the <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Waiting List<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>.
           <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
         </span><span class="hljs-expression">{{<span class="hljs-variable"><span class="hljs-keyword">else</span></span>}}</span><span class="xml">
           <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"alert alert-danger"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"alert"</span>&gt;</span>
