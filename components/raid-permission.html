@@ -5,8 +5,11 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
     <span class="hljs-keyword">var</span> type = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permission.type'</span>);
     <span class="hljs-keyword">switch</span> (type) {
     <span class="hljs-keyword">case</span> <span class="hljs-string">'Guild'</span>:
+      <span class="hljs-keyword">return</span> <span class="hljs-string">'Guild - '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permission.name'</span>) + <span class="hljs-string">' - '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permission.realm'</span>);
     <span class="hljs-keyword">case</span> <span class="hljs-string">'Character'</span>:
-      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permission.name'</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-string">'Character - '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permission.name'</span>) + <span class="hljs-string">' - '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permission.realm'</span>);
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'Account'</span>:
+      <span class="hljs-keyword">return</span> <span class="hljs-string">'Account - '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permission.name'</span>);
     <span class="hljs-keyword">default</span>:
       <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permission.args'</span>);
     }
