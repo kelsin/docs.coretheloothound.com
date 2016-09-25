@@ -1126,6 +1126,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/serializers/permission.js",
+            "projectPath": "app/serializers/permission.js",
+            "targetPath": "serializers/permission",
+            "pageTitle": "serializers/permission",
+            "title": "permission"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/Users/cgiroir/src/coretheloothound/app/serializers/signup.js",
             "projectPath": "app/serializers/signup.js",
             "targetPath": "serializers/signup",

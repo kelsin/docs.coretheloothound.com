@@ -2,7 +2,6 @@
 import DS from <span class="hljs-string">'ember-data'</span>;
 
 export <span class="hljs-keyword">default</span> DS.RESTSerializer.extend({
-  isNewSerializerAPI: <span class="hljs-literal">true</span>,
   keyForAttribute: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(attr)</span> {</span>
     <span class="hljs-keyword">return</span> Ember.String.underscore(attr);
   }

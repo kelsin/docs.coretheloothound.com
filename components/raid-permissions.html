@@ -1,10 +1,54 @@
 <!DOCTYPE html><html lang="en"><head><title>components/raid-permissions</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="components/raid-permissions"><meta name="groc-project-path" content="app/components/raid-permissions.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/components/raid-permissions.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;
 
 export <span class="hljs-keyword">default</span> Ember.Component.extend({
+  storage: Ember.inject.service(),
   adminPermissions: Ember.computed.filterBy(<span class="hljs-string">'raid.permissions'</span>, <span class="hljs-string">'level'</span>, <span class="hljs-string">'admin'</span>),
   memberPermissions: Ember.computed.filterBy(<span class="hljs-string">'raid.permissions'</span>, <span class="hljs-string">'level'</span>, <span class="hljs-string">'member'</span>),
 
+  init() {
+    <span class="hljs-keyword">this</span>._super(...arguments);
+    <span class="hljs-keyword">var</span> storedPermissions = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).getValue(<span class="hljs-string">'permissions'</span>) || <span class="hljs-string">'{}'</span>;
+    <span class="hljs-keyword">var</span> allPermissions = <span class="hljs-built_in">JSON</span>.parse(storedPermissions);
+    <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'permissionSets'</span>, <span class="hljs-built_in">Object</span>.keys(allPermissions));
+  },
+
   actions: {
+    savePermissions() {
+      <span class="hljs-keyword">var</span> name = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'layoutName'</span>);
+      <span class="hljs-keyword">var</span> storedPermissions = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).getValue(<span class="hljs-string">'permissions'</span>) || <span class="hljs-string">'{}'</span>;
+      <span class="hljs-keyword">var</span> permissions = <span class="hljs-built_in">JSON</span>.parse(storedPermissions);
+
+      <span class="hljs-keyword">var</span> newPermission = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'memberPermissions'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(record)</span> {</span>
+        <span class="hljs-keyword">return</span> record.toJSON();
+      });
+
+      permissions[name] = newPermission;
+
+      <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).setValue(<span class="hljs-string">'permissions'</span>, <span class="hljs-built_in">JSON</span>.stringify(permissions));
+      <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'layoutName'</span>, <span class="hljs-literal">undefined</span>);
+    },
+
+    applyPermissions(name) {
+      <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
+      <span class="hljs-keyword">var</span> storedPermissions = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).getValue(<span class="hljs-string">'permissions'</span>) || <span class="hljs-string">'{}'</span>;
+      <span class="hljs-keyword">var</span> permissions = <span class="hljs-built_in">JSON</span>.parse(storedPermissions);
+
+      <span class="hljs-keyword">if</span>(permissions[name]) {
+        permissions[name].forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(permission)</span> {</span>
+          _this.sendAction(<span class="hljs-string">'newPermission'</span>,
+                           permission.level,
+                           permission.key);
+        });
+      }
+    },
+
+    deletePermissions(name) {
+      <span class="hljs-keyword">var</span> storedPermissions = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).getValue(<span class="hljs-string">'permissions'</span>) || <span class="hljs-string">'{}'</span>;
+      <span class="hljs-keyword">var</span> permissions = <span class="hljs-built_in">JSON</span>.parse(storedPermissions);
+      <span class="hljs-keyword">delete</span> permissions[name];
+      <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).setValue(<span class="hljs-string">'permissions'</span>, <span class="hljs-built_in">JSON</span>.stringify(permissions));
+    },
+
     newAdminPermission() {
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">'newPermission'</span>,
                       <span class="hljs-string">'admin'</span>,
