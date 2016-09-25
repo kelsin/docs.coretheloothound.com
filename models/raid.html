@@ -120,7 +120,7 @@ import Permissioned from <span class="hljs-string">'./permissioned'</span>;</div
     });
 
     <span class="hljs-built_in">Object</span>.keys(sums).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(slug)</span> {</span>
-      avgs[slug] = sums[slug] / counts[slug];
+      avgs[slug] = <span class="hljs-built_in">Math</span>.round(sums[slug] / counts[slug]);
     });
 
     <span class="hljs-keyword">return</span> avgs;
