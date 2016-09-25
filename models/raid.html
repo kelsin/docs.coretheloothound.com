@@ -98,7 +98,7 @@ import Permissioned from <span class="hljs-string">'./permissioned'</span>;</div
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'waitingList'</span>).mapBy(<span class="hljs-string">'character.account'</span>).uniq().map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(account)</span> {</span>
       <span class="hljs-keyword">return</span> Ember.Object.create({
         account: account,
-        signups: _this.get(<span class="hljs-string">'waitingList'</span>).filterBy(<span class="hljs-string">'character.account.id'</span>, account.get(<span class="hljs-string">'id'</span>))
+        signups: _this.get(<span class="hljs-string">'waitingList'</span>).filterBy(<span class="hljs-string">'character.account.id'</span>, account.get(<span class="hljs-string">'id'</span>)).sortBy(<span class="hljs-string">'character.name'</span>)
       });
     });
   })
