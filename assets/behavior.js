@@ -721,26 +721,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           },
           "depth": 2,
           "outline": []
-        }, {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/initializers/storage.js",
-            "projectPath": "app/initializers/storage.js",
-            "targetPath": "initializers/storage",
-            "pageTitle": "initializers/storage",
-            "title": "storage"
-          },
-          "depth": 2,
-          "outline": []
         }
       ]
     }, {
@@ -911,55 +891,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           },
           "depth": 2,
           "outline": []
-        }, {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/models/storage.js",
-            "projectPath": "app/models/storage.js",
-            "targetPath": "models/storage",
-            "pageTitle": "models/storage",
-            "title": "storage"
-          },
-          "depth": 2,
-          "outline": [
-            {
-              "type": "heading",
-              "data": {
-                "level": 1,
-                "title": "Storage.js",
-                "slug": "storagejs"
-              },
-              "depth": 1,
-              "children": [
-                {
-                  "type": "heading",
-                  "data": {
-                    "level": 2,
-                    "title": "Installation",
-                    "slug": "installation"
-                  },
-                  "depth": 2
-                }, {
-                  "type": "heading",
-                  "data": {
-                    "level": 2,
-                    "title": "Usage",
-                    "slug": "usage"
-                  },
-                  "depth": 2
-                }
-              ]
-            }
-          ]
         }
       ]
     }, {
@@ -1092,6 +1023,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/routes/index.js",
+            "projectPath": "app/routes/index.js",
+            "targetPath": "routes/index",
+            "pageTitle": "routes/index",
+            "title": "index"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/Users/cgiroir/src/coretheloothound/app/routes/raid.js",
             "projectPath": "app/routes/raid.js",
             "targetPath": "routes/raid",
@@ -1203,6 +1154,85 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           },
           "depth": 2,
           "outline": []
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
+        "path": "services",
+        "title": "services"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/services/session.js",
+            "projectPath": "app/services/session.js",
+            "targetPath": "services/session",
+            "pageTitle": "services/session",
+            "title": "session"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/services/storage.js",
+            "projectPath": "app/services/storage.js",
+            "targetPath": "services/storage",
+            "pageTitle": "services/storage",
+            "title": "storage"
+          },
+          "depth": 2,
+          "outline": [
+            {
+              "type": "heading",
+              "data": {
+                "level": 1,
+                "title": "Storage.js",
+                "slug": "storagejs"
+              },
+              "depth": 1,
+              "children": [
+                {
+                  "type": "heading",
+                  "data": {
+                    "level": 2,
+                    "title": "Installation",
+                    "slug": "installation"
+                  },
+                  "depth": 2
+                }, {
+                  "type": "heading",
+                  "data": {
+                    "level": 2,
+                    "title": "Usage",
+                    "slug": "usage"
+                  },
+                  "depth": 2
+                }
+              ]
+            }
+          ]
         }
       ]
     }, {

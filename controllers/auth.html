@@ -1,28 +1,18 @@
-<!DOCTYPE html><html lang="en"><head><title>controllers/auth</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="controllers/auth"><meta name="groc-project-path" content="app/controllers/auth.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/controllers/auth.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import ENV from <span class="hljs-string">'coretheloothound/config/environment'</span>;
-import Ember from <span class="hljs-string">'ember'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Controller for the login/logout view</p></div></div><div class="code"><div class="wrapper">export <span class="hljs-keyword">default</span> Ember.Controller.extend({
-  applicationController: Ember.inject.controller(<span class="hljs-string">'application'</span>),
+<!DOCTYPE html><html lang="en"><head><title>controllers/auth</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="controllers/auth"><meta name="groc-project-path" content="app/controllers/auth.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/controllers/auth.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Controller for the login/logout view</p></div></div><div class="code"><div class="wrapper">export <span class="hljs-keyword">default</span> Ember.Controller.extend({
+  application: Ember.inject.controller(),
+  session: Ember.inject.service(),
 
-  apikey: Ember.computed.alias(<span class="hljs-string">'applicationController.apikey'</span>),
-  account: Ember.computed.alias(<span class="hljs-string">'applicationController.account'</span>),
-  loggedIn: Ember.computed.alias(<span class="hljs-string">'applicationController.loggedIn'</span>),
+  account: Ember.computed.alias(<span class="hljs-string">'application.model'</span>),
+  apikey: Ember.computed.alias(<span class="hljs-string">'session.apikey'</span>),
+  loggedIn: Ember.computed.alias(<span class="hljs-string">'session.loggedIn'</span>),
 
   actions: {
     logout() {
       <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
-
-      Ember.$.ajax({
-        type: <span class="hljs-string">'GET'</span>,
-        url: ENV.api + <span class="hljs-string">'/logout'</span>,
-        headers: {
-          Authorization: <span class="hljs-string">'apikey '</span> + _this.get(<span class="hljs-string">'apikey'</span>)
-        },
-        success() {
-          _this.get(<span class="hljs-string">'storage'</span>).removeValue(<span class="hljs-string">'apikey'</span>);
-          _this.set(<span class="hljs-string">'apikey'</span>, <span class="hljs-literal">undefined</span>);
-          _this.set(<span class="hljs-string">'account'</span>, <span class="hljs-literal">undefined</span>);
+      <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'session'</span>).logout()
+        .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
           _this.transitionToRoute(<span class="hljs-string">'index'</span>);
-        }
-      });
+        });
     }
   }
 });</div></div></div></div></body></html>

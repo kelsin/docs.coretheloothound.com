@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en"><head><title>services/session</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="services/session"><meta name="groc-project-path" content="app/services/session.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/services/session.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">import Ember from <span class="hljs-string">'ember'</span>;
+import ENV from <span class="hljs-string">'coretheloothound/config/environment'</span>;
+
+export <span class="hljs-keyword">default</span> Ember.Service.extend({
+  storage: Ember.inject.service(),</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Logged In State</p></div></div><div class="code"><div class="wrapper">  loggedIn: <span class="hljs-literal">false</span>,</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>API Key</p></div></div><div class="code"><div class="wrapper">  apikey: <span class="hljs-literal">null</span>,
+
+  init() {
+    <span class="hljs-keyword">var</span> apikey = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).getValue(<span class="hljs-string">'apikey'</span>);
+    <span class="hljs-keyword">if</span>(!Ember.isBlank(apikey)) {
+      <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'loggedIn'</span>, <span class="hljs-literal">true</span>);
+      <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'apikey'</span>, apikey);
+    }
+  },
+
+  login() {
+    <span class="hljs-keyword">return</span> Ember.$.ajax({
+      type: <span class="hljs-string">'GET'</span>,
+      url: ENV.api + <span class="hljs-string">'/login'</span>,
+      headers: {
+        Accept: <span class="hljs-string">'application/json+ember'</span>
+      },
+      data: {
+        redirect: window.location.protocol +
+          <span class="hljs-string">'//'</span> + window.location.host +
+          <span class="hljs-string">'/#/apikey/'</span>
+      },
+      success(data) {
+        window.location = data.href;
+      }
+    });
+  },
+
+  setApikey(apikey) {
+    <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'loggedIn'</span>, <span class="hljs-literal">true</span>);
+    <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'apikey'</span>, apikey);
+    <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).setValue(<span class="hljs-string">'apikey'</span>, apikey);
+  },
+
+  logout() {
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'loggedIn'</span>)) {
+      <span class="hljs-keyword">var</span> apikey = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'apikey'</span>);
+      <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
+
+      <span class="hljs-keyword">return</span> Ember.$.ajax({
+        type: <span class="hljs-string">'GET'</span>,
+        url: ENV.api + <span class="hljs-string">'/logout'</span>,
+        headers: {
+          Authorization: <span class="hljs-string">'apikey '</span> + apikey
+        },
+        complete() {
+          _this.set(<span class="hljs-string">'loggedIn'</span>, <span class="hljs-literal">false</span>);
+          _this.set(<span class="hljs-string">'apikey'</span>, <span class="hljs-literal">null</span>);
+          _this.get(<span class="hljs-string">'storage'</span>).removeValue(<span class="hljs-string">'apikey'</span>);
+        }
+      });
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> Ember.RSVP.resolve(<span class="hljs-literal">true</span>);
+    }
+  }
+});</div></div></div></div></body></html>

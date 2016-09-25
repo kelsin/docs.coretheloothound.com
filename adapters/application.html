@@ -4,11 +4,12 @@ import ENV from <span class="hljs-string">'coretheloothound/config/environment'<
 
 export <span class="hljs-keyword">default</span> DS.RESTAdapter.extend({
   host: ENV.api,
+  session: Ember.inject.service(),
 
   headers: Ember.computed(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> {
       <span class="hljs-string">'Accept'</span>: <span class="hljs-string">'application/json+ember'</span>,
-      <span class="hljs-string">'Authorization'</span>: <span class="hljs-string">'apikey '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).getValue(<span class="hljs-string">'apikey'</span>)
+      <span class="hljs-string">'Authorization'</span>: <span class="hljs-string">'apikey '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'session'</span>).get(<span class="hljs-string">'apikey'</span>)
     };
   }).volatile()
 });</div></div></div></div></body></html>

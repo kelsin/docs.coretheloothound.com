@@ -3,7 +3,7 @@
 export <span class="hljs-keyword">default</span> Ember.Controller.extend({
   indexController: Ember.inject.controller(<span class="hljs-string">'raids/index'</span>),
   applicationController: Ember.inject.controller(<span class="hljs-string">'application'</span>),
-  currentAccount: Ember.computed.alias(<span class="hljs-string">'applicationController.account'</span>),
+  currentAccount: Ember.computed.alias(<span class="hljs-string">'applicationController.model'</span>),
   roles: Ember.computed.alias(<span class="hljs-string">'indexController.roles'</span>),
   rolesSorting: [<span class="hljs-string">'slug:desc'</span>],
   sortedRoles: Ember.computed.sort(<span class="hljs-string">'roles'</span>, <span class="hljs-string">'rolesSorting'</span>),
