@@ -15,7 +15,7 @@ export <span class="hljs-keyword">default</span> Ember.Controller.extend({
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'sortedRoles'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(role)</span> {</span>
       <span class="hljs-keyword">return</span> Ember.Object.create({
         role: role,
-        signups: _this.get(<span class="hljs-string">'model.seated'</span>).filterBy(<span class="hljs-string">'role.id'</span>, role.get(<span class="hljs-string">'id'</span>)).sortBy(<span class="hljs-string">'character.name'</span>)
+        signups: _this.get(<span class="hljs-string">'model.seated'</span>).filterBy(<span class="hljs-string">'role.id'</span>, role.get(<span class="hljs-string">'id'</span>)).sortBy(<span class="hljs-string">'character.className'</span>, <span class="hljs-string">'character.name'</span>)
       });
     });
   }),
