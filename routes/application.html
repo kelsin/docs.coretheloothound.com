@@ -10,7 +10,6 @@ export <span class="hljs-keyword">default</span> Ember.Route.extend({
 
     <span class="hljs-keyword">if</span> (session.get(<span class="hljs-string">'loggedIn'</span>)) {
       <span class="hljs-keyword">var</span> apikey = session.get(<span class="hljs-string">'apikey'</span>);
-      console.log(<span class="hljs-string">"Logged In:"</span>, apikey);
 
       <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Ember.RSVP.Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve)</span> {</span>
         Ember.$.ajax({

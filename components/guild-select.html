@@ -14,12 +14,18 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
     <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'account.characters'</span>) || Ember.A([])).mapBy(<span class="hljs-string">'guild'</span>).compact().uniq().sortBy(<span class="hljs-string">'name'</span>).toArray();
   }),
 
+  init() {
+    <span class="hljs-keyword">this</span>._super(...arguments);
+    <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">'changeGuild'</span>, <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guild'</span>));
+  },
+
   actions: {
     change(event) {
       <span class="hljs-keyword">const</span> guilds = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'guilds'</span>);
       <span class="hljs-keyword">const</span> selectedIndex = event.target.selectedIndex;
       <span class="hljs-keyword">const</span> guild = guilds[selectedIndex - <span class="hljs-number">1</span>];
       <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'guild'</span>, guild);
+      <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">'changeGuild'</span>, guild);
     }
   }
 });</div></div></div></div></body></html>
