@@ -601,26 +601,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "outline": []
             }
           ]
-        }, {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/controllers/role.js",
-            "projectPath": "app/controllers/role.js",
-            "targetPath": "controllers/role",
-            "pageTitle": "controllers/role",
-            "title": "role"
-          },
-          "depth": 2,
-          "outline": []
         }
       ]
     }, {
