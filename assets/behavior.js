@@ -240,6 +240,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/character-display.js",
+            "projectPath": "app/components/character-display.js",
+            "targetPath": "components/character-display",
+            "pageTitle": "components/character-display",
+            "title": "character-display"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/Users/cgiroir/src/coretheloothound/app/components/character-select.js",
             "projectPath": "app/components/character-select.js",
             "targetPath": "components/character-select",
@@ -1471,6 +1491,27 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "depth": 2,
           "children": [
             {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/cgiroir/src/coretheloothound/app/templates/components/character-display.hbs",
+                "projectPath": "app/templates/components/character-display.hbs",
+                "targetPath": "templates/components/character-display",
+                "pageTitle": "templates/components/character-display",
+                "title": "character-display"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
               "type": "file",
               "data": {
                 "language": {

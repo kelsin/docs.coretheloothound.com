@@ -2,7 +2,7 @@
 
 export <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">characterRace</span><span class="hljs-params">(race_id)</span> {</span>
   <span class="hljs-keyword">var</span> faction = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(race_id)</span> {</span>
-    <span class="hljs-keyword">switch</span>(race_id) {
+    <span class="hljs-keyword">switch</span>(<span class="hljs-built_in">parseInt</span>(race_id)) {
     <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
     <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
     <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
@@ -44,7 +44,7 @@ export <span class="hljs-function"><span class="hljs-keyword">function</span> <s
     <span class="hljs-number">26</span>: <span class="hljs-string">'Pandaren'</span>
   };
 
-  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Ember.String.htmlSafe(<span class="hljs-string">'&lt;span class="'</span> + faction(race_id) + <span class="hljs-string">'"&gt;'</span> + races[race_id] + <span class="hljs-string">'&lt;/span&gt;'</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Ember.String.htmlSafe(<span class="hljs-string">'&lt;span class="race_'</span> + race_id + <span class="hljs-string">' '</span> + faction(race_id) + <span class="hljs-string">'"&gt;'</span> + races[race_id] + <span class="hljs-string">'&lt;/span&gt;'</span>);
 }
 
 export <span class="hljs-keyword">default</span> Ember.Helper.helper(characterRace);</div></div></div></div></body></html>

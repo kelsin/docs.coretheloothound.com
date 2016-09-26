@@ -2,6 +2,8 @@
 
 export <span class="hljs-keyword">default</span> Ember.Component.extend({
   classNames: <span class="hljs-string">'signup'</span>,
+  classNameBindings: <span class="hljs-string">'selected'</span>,
+  selected: <span class="hljs-literal">false</span>,
 
   rolesSorting: [<span class="hljs-string">'slug:desc'</span>],
   sortedRoles: Ember.computed.sort(<span class="hljs-string">'signup.roles'</span>, <span class="hljs-string">'rolesSorting'</span>),
@@ -42,6 +44,10 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
     },
     unseat() {
       <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">"unseat"</span>,
+                      <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup'</span>));
+    },
+    select() {
+      <span class="hljs-keyword">this</span>.sendAction(<span class="hljs-string">"select"</span>,
                       <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'signup'</span>));
     }
   }
