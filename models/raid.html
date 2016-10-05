@@ -112,11 +112,13 @@ import Permissioned from <span class="hljs-string">'./permissioned'</span>;</div
       <span class="hljs-keyword">var</span> roleSlug = signup.get(<span class="hljs-string">'role.slug'</span>);
       <span class="hljs-keyword">var</span> ilvl = signup.get(<span class="hljs-string">'character.item_level'</span>);
 
-      counts.total = (counts.total || <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>;
-      counts[roleSlug] = (counts[roleSlug] || <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>;
+      <span class="hljs-keyword">if</span> (ilvl &gt; <span class="hljs-number">0</span>) {
+        counts.total = (counts.total || <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>;
+        counts[roleSlug] = (counts[roleSlug] || <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>;
 
-      sums.total = (sums.total || <span class="hljs-number">0</span>) + ilvl;
-      sums[roleSlug] = (sums[roleSlug] || <span class="hljs-number">0</span>) + ilvl;
+        sums.total = (sums.total || <span class="hljs-number">0</span>) + ilvl;
+        sums[roleSlug] = (sums[roleSlug] || <span class="hljs-number">0</span>) + ilvl;
+      }
     });
 
     <span class="hljs-built_in">Object</span>.keys(sums).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(slug)</span> {</span>
