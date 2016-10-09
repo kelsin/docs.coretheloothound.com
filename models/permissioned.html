@@ -3,5 +3,16 @@
 export <span class="hljs-keyword">default</span> DS.Model.extend({
   permissions: DS.hasMany(<span class="hljs-string">'permission'</span>, {
     async: <span class="hljs-literal">false</span>
-  })
+  }),
+
+  hasPermission(level, key) {
+    <span class="hljs-keyword">var</span> found = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'permissions'</span>).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(permission)</span> {</span>
+      <span class="hljs-keyword">if</span>(permission.get(<span class="hljs-string">'level'</span>) === level &amp;&amp; permission.get(<span class="hljs-string">'key'</span>) === key) {
+        found = <span class="hljs-literal">true</span>;
+        <span class="hljs-keyword">return</span>;
+      }
+    });
+    <span class="hljs-keyword">return</span> found;
+  }
 });</div></div></div></div></body></html>

@@ -67,13 +67,15 @@
     newPermission(level, key) {
       <span class="hljs-keyword">var</span> raid = <span class="hljs-keyword">this</span>.currentModel;
 
-      <span class="hljs-keyword">var</span> permission = <span class="hljs-keyword">this</span>.store.createRecord(<span class="hljs-string">'permission'</span>, {
-        level: level,
-        key: key,
-        permissioned: raid
-      });
+      <span class="hljs-keyword">if</span>(!raid.hasPermission(level, key)) {
+        <span class="hljs-keyword">var</span> permission = <span class="hljs-keyword">this</span>.store.createRecord(<span class="hljs-string">'permission'</span>, {
+          level: level,
+          key: key,
+          permissioned: raid
+        });
 
-      permission.save();
+        permission.save();
+      }
     },
 
     deletePermission(permission) {

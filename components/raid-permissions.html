@@ -5,11 +5,15 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
   adminPermissions: Ember.computed.filterBy(<span class="hljs-string">'raid.permissions'</span>, <span class="hljs-string">'level'</span>, <span class="hljs-string">'admin'</span>),
   memberPermissions: Ember.computed.filterBy(<span class="hljs-string">'raid.permissions'</span>, <span class="hljs-string">'level'</span>, <span class="hljs-string">'member'</span>),
 
-  init() {
-    <span class="hljs-keyword">this</span>._super(...arguments);
+  loadPermissions() {
     <span class="hljs-keyword">var</span> storedPermissions = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).getValue(<span class="hljs-string">'permissions'</span>) || <span class="hljs-string">'{}'</span>;
     <span class="hljs-keyword">var</span> allPermissions = <span class="hljs-built_in">JSON</span>.parse(storedPermissions);
     <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'permissionSets'</span>, <span class="hljs-built_in">Object</span>.keys(allPermissions));
+  },
+
+  init() {
+    <span class="hljs-keyword">this</span>._super(...arguments);
+    <span class="hljs-keyword">this</span>.loadPermissions();
   },
 
   actions: {
@@ -18,14 +22,19 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
       <span class="hljs-keyword">var</span> storedPermissions = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).getValue(<span class="hljs-string">'permissions'</span>) || <span class="hljs-string">'{}'</span>;
       <span class="hljs-keyword">var</span> permissions = <span class="hljs-built_in">JSON</span>.parse(storedPermissions);
 
-      <span class="hljs-keyword">var</span> newPermission = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'memberPermissions'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(record)</span> {</span>
+      <span class="hljs-keyword">var</span> newMemberPermissions = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'memberPermissions'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(record)</span> {</span>
         <span class="hljs-keyword">return</span> record.toJSON();
       });
+      <span class="hljs-keyword">var</span> newAdminPermissions = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'adminPermissions'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(record)</span> {</span>
+        <span class="hljs-keyword">return</span> record.toJSON();
+      });
+      <span class="hljs-keyword">var</span> newPermissions = newMemberPermissions.concat(newAdminPermissions);
 
-      permissions[name] = newPermission;
+      permissions[name] = newPermissions;
 
       <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).setValue(<span class="hljs-string">'permissions'</span>, <span class="hljs-built_in">JSON</span>.stringify(permissions));
       <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'layoutName'</span>, <span class="hljs-literal">undefined</span>);
+      <span class="hljs-keyword">this</span>.loadPermissions();
     },
 
     applyPermissions(name) {
@@ -47,6 +56,7 @@ export <span class="hljs-keyword">default</span> Ember.Component.extend({
       <span class="hljs-keyword">var</span> permissions = <span class="hljs-built_in">JSON</span>.parse(storedPermissions);
       <span class="hljs-keyword">delete</span> permissions[name];
       <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'storage'</span>).setValue(<span class="hljs-string">'permissions'</span>, <span class="hljs-built_in">JSON</span>.stringify(permissions));
+      <span class="hljs-keyword">this</span>.loadPermissions();
     },
 
     newAdminPermission() {
