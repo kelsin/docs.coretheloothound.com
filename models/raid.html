@@ -35,7 +35,11 @@ import Permissioned from <span class="hljs-string">'./permissioned'</span>;</div
   }),
 
   dateCalendar: Ember.computed(<span class="hljs-string">'date'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">return</span> moment(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'date'</span>)).calendar();
+    <span class="hljs-keyword">return</span> moment(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'date'</span>)).format(<span class="hljs-string">'ddd MMM Do'</span>);
+  }),
+
+  dateTime: Ember.computed(<span class="hljs-string">'date'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> moment(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">'date'</span>)).format(<span class="hljs-string">'h:mm a'</span>);
   }),
 
   accountSignups: Ember.computed(<span class="hljs-string">'signups.[].character'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
