@@ -3,5 +3,8 @@
 export <span class="hljs-keyword">default</span> Ember.Controller.extend({
   session: Ember.inject.service(),
   apikey: Ember.computed.alias(<span class="hljs-string">'session.apikey'</span>),
-  loggedIn: Ember.computed.alias(<span class="hljs-string">'session.loggedIn'</span>)
+  loggedIn: Ember.computed.alias(<span class="hljs-string">'session.loggedIn'</span>),
+  currentYear: Ember.computed(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    <span class="hljs-keyword">return</span> moment().format(<span class="hljs-string">'YYYY'</span>);
+  })
 });</div></div></div></div></body></html>
